@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.market_wl.R;
 import com.example.market_wl.offers.presenter.ui.offers.OffersFragment;
 
 public class OffersActivity extends AppCompatActivity {

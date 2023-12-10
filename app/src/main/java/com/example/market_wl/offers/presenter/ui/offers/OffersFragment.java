@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.market_wl.offers.presenter.R;
+import com.example.market_wl.R;
 
 public class OffersFragment extends Fragment {
 

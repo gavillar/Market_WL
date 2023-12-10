@@ -2,6 +2,7 @@ package com.example.market_wl;
 
 import android.os.Bundle;
 
+import com.github.djunqueirao.RequestManager;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;

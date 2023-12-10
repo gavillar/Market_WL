@@ -12,7 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.market_wl.login.presenter.R;
+import com.example.market_wl.R;
+
 
 public class LoginFragment extends Fragment {
 

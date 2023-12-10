@@ -1,9 +1,10 @@
 package com.example.market_wl.login.presenter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.market_wl.R;
 import com.example.market_wl.login.presenter.ui.login.LoginFragment;
 
 public class LoginActivity extends AppCompatActivity {
