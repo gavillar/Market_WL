@@ -12,16 +12,10 @@
         android:theme="@style/Theme.Market_WL"
         tools:targetApi="31">
         <activity
-            android:name=".OffersActivity"
+            android:name=".offers.presenter.OffersActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SignInActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".login.presenter.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Market_WL.NoActionBar">
