@@ -19,6 +19,7 @@ import com.example.market_wl.layout.home.presenter.HomeActivity;
 public class LoginFragment extends Fragment {
 
     private LoginViewModel mViewModel;
+    private AppCompatButton enterButton;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -39,14 +40,20 @@ public class LoginFragment extends Fragment {
             @Nullable Bundle savedInstanceState
     ) {
         FragmentLoginBinding fragmentLoginBinding = FragmentLoginBinding.inflate(inflater, container, false);
-        AppCompatButton enterButton = fragmentLoginBinding.enterButton;
-        enterButton.setOnClickListener(
-            view -> {
-                Intent intent = new Intent(getActivity(), HomeActivity.class);
-                startActivity(intent);
-            }
-        );
+        setEnterButton(fragmentLoginBinding);
         return fragmentLoginBinding.getRoot();
     }
 
+    private AppCompatButton setEnterButton(FragmentLoginBinding fragmentLoginBinding) {
+        if(enterButton == null) {
+            enterButton = fragmentLoginBinding.enterButton;
+            enterButton.setOnClickListener(
+                    view -> {
+                        Intent intent = new Intent(getActivity(), HomeActivity.class);
+                        startActivity(intent);
+                    }
+            );
+        }
+        return enterButton;
+    }
 }
