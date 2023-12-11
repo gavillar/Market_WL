@@ -12,16 +12,18 @@
         android:theme="@style/Theme.Market_WL"
         tools:targetApi="31">
         <activity
-            android:name=".offers.presenter.OffersActivity"
+            android:name=".layout.home.presenter.HomeActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".layout.presenter.OffersActivity"
             android:exported="false" />
         <activity
-            android:name=".login.presenter.LoginActivity"
+            android:name=".layout.login.presenter.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Market_WL.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
