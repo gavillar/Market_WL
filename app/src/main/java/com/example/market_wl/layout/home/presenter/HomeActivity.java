@@ -3,6 +3,7 @@ package com.example.market_wl.layout.home.presenter;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.market_wl.databinding.ActivityHomeBinding;
 import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
@@ -16,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
             Bundle savedInstanceState
     ) {
         super.onCreate(savedInstanceState);
-        setContentView(getActivityHomeBinding().getRoot());
+        setContentView(getActivityHomeBindingRoot());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                 .replace(
@@ -37,5 +38,12 @@ public class HomeActivity extends AppCompatActivity {
             );
         }
         return activityHomeBinding;
+    }
+
+    private DrawerLayout getActivityHomeBindingRoot() {
+        final DrawerLayout drawerLayout = (
+            getActivityHomeBinding().getRoot()
+        );
+        return drawerLayout;
     }
 }
