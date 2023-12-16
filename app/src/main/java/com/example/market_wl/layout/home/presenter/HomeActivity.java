@@ -26,24 +26,27 @@ public class HomeActivity extends AppCompatActivity {
                 )
                 .commitNow();
         }
-        getActivityHomeBinding().getRoot().open();
-    }
-
-    private ActivityHomeBinding getActivityHomeBinding() {
-        if(activityHomeBinding == null) {
-            activityHomeBinding = (
-                ActivityHomeBinding.inflate(
-                        getLayoutInflater()
-                )
-            );
-        }
-        return activityHomeBinding;
     }
 
     private DrawerLayout getActivityHomeBindingRoot() {
         final DrawerLayout drawerLayout = (
             getActivityHomeBinding().getRoot()
         );
+        getActivityHomeBinding()
+            .homeToolbarMenu.setOnClickListener(
+                view -> drawerLayout.open()
+            );
         return drawerLayout;
+    }
+
+    private ActivityHomeBinding getActivityHomeBinding() {
+        if(activityHomeBinding == null) {
+            activityHomeBinding = (
+                ActivityHomeBinding.inflate(
+                    getLayoutInflater()
+                )
+            );
+        }
+        return activityHomeBinding;
     }
 }
