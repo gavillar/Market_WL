@@ -39,7 +39,9 @@ public class LoginFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        FragmentLoginBinding fragmentLoginBinding = FragmentLoginBinding.inflate(inflater, container, false);
+        FragmentLoginBinding fragmentLoginBinding = FragmentLoginBinding.inflate(
+                inflater, container, false
+        );
         setEnterButton(fragmentLoginBinding);
         return fragmentLoginBinding.getRoot();
     }
