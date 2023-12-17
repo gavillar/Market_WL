@@ -20,5 +20,7 @@ public class LoginActivity extends AppCompatActivity {
                     .replace(R.id.container, LoginFragment.newInstance())
                     .commitNow();
         }
+
+        getSupportActionBar().hide();
     }
 }
