@@ -11,7 +11,7 @@ import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
 public class HomeActivity extends AppCompatActivity {
 
     ActivityHomeBinding activityHomeBinding;
-//teste
+
     @Override
     protected void onCreate(
             Bundle savedInstanceState
