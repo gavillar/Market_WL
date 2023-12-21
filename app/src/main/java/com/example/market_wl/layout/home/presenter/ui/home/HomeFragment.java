@@ -6,19 +6,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.market_wl.R;
+import com.example.market_wl.databinding.ActivityHomeBinding;
+import com.example.market_wl.databinding.FragmentHomeBinding;
+
+import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
+
+    private FragmentHomeBinding fragmentHomeBinding;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -38,6 +48,33 @@ public class HomeFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        ArrayList<String> dataList = new ArrayList<>();
+        dataList.add("Item 1");
+        dataList.add("Item 2");
+        dataList.add("Item 3");
+        dataList.add("Item 4");
+
+        RecyclerView recyclerView = getFragmentHomeRecyclerView();
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+        HomeAdapter homeAdapter = new HomeAdapter(getContext(), dataList);
+        recyclerView.setAdapter(homeAdapter);
+
+        return getFragmentHomeBinding().getRoot();
+    }
+
+    private FragmentHomeBinding getFragmentHomeBinding() {
+        if(fragmentHomeBinding == null) {
+            fragmentHomeBinding = (
+                FragmentHomeBinding.inflate(
+                    getLayoutInflater()
+                )
+            );
+        }
+        return fragmentHomeBinding;
+    }
+
+    private RecyclerView getFragmentHomeRecyclerView() {
+        return getFragmentHomeBinding().fragmentHomeRecyclerView;
     }
 }

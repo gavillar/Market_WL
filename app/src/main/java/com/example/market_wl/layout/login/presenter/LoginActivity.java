@@ -21,6 +21,6 @@ public class LoginActivity extends AppCompatActivity {
                     .commitNow();
         }
 
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
     }
 }

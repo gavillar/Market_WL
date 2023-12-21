@@ -10,11 +10,11 @@ import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
 
 public class HomeActivity extends AppCompatActivity {
 
-    ActivityHomeBinding activityHomeBinding;
+    private ActivityHomeBinding activityHomeBinding;
 
     @Override
     protected void onCreate(
-            Bundle savedInstanceState
+        Bundle savedInstanceState
     ) {
         super.onCreate(savedInstanceState);
         setContentView(getActivityHomeBindingRoot());
