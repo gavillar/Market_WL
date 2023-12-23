@@ -15,11 +15,12 @@
 
     <string name="entrar">Entrar</string>
     <string name="text_register">Crie uma conta clicando aqui</string>
-    <string name="tab_bar_first_item">a</string>
-    <string name="tab_bar_second_item">b</string>
+    <string name="tab_bar_first_item">⌂</string>
+    <string name="tab_bar_second_item">🖹</string>
     <string name="tab_bar_first_item_description">Descrição da primeira guia</string>
     <string name="tab_bar_second_item_description">Descrição da primeira guia</string>
     <string name="plus">+</string>
+    <string name="happy_family">Happy Family</string>
 
 
 </resources>

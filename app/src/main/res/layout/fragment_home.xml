@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <TextView
-            android:text="Happy Family"
+            android:text="@string/happy_family"
             android:textSize="30sp"
             android:background="@color/blue"
             android:layout_width="match_parent"
