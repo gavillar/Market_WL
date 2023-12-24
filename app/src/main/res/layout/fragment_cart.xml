@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".layout.fragments.CartFragment">
+    tools:context=".layout.cart.presenter.fragments.CartFragment">
 
-    <androidx.constraintlayout.utils.widget.ImageFilterView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_cart"
-        android:background="@color/white"
-        android:layout_gravity="center"/>
-    
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

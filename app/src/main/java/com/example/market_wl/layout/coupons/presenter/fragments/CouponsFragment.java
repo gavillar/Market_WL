@@ -1,4 +1,4 @@
-package com.example.market_wl.layout.fragments;
+package com.example.market_wl.layout.coupons.presenter.fragments;
 
 import android.os.Bundle;
 
