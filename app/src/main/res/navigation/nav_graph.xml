@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.market_wl.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        android:id="@+id/homeFragment"
+        android:name="com.example.market_wl.layout.home.presenter.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.market_wl.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        android:id="@+id/cartFragment"
+        android:name="com.example.market_wl.layout.fragments.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.market_wl.layout.fragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/couponsFragment"
+        android:name="com.example.market_wl.layout.fragments.CouponsFragment"
+        android:label="fragment_coupons"
+        tools:layout="@layout/fragment_coupons" />
 </navigation>
