@@ -8,21 +8,15 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".layout.home.presenter.HomeActivity">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/homeFragmentContainerView"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <FrameLayout
+            android:id="@+id/homeFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@id/bottom_navigation"
-            android:layout_below="@+id/home_toolbar"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
-
+            android:layout_below="@+id/home_toolbar"/>
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.App.BottomNavigationView"
@@ -32,15 +26,12 @@
             android:layout_alignParentBottom="true"
             app:itemIconTint="@color/black"
             app:itemTextColor="@color/black"
-            app:menu="@menu/bottom_navigation_menu"
-            />
-
+            app:menu="@menu/bottom_navigation_menu"/>
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/home_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/gray_111">
-
             <TextView
                 android:id="@+id/home_toolbar_menu"
                 android:layout_width="40dp"
@@ -49,8 +40,7 @@
                 android:gravity="center"
                 android:text="@string/hamburguer"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
+                android:textSize="24sp"/>
             <ImageView
                 android:id="@+id/home_toolbar_profile"
                 android:layout_width="wrap_content"
@@ -60,24 +50,14 @@
                 android:layout_marginRight="16dp"
                 android:src="@drawable/ic_person"
                 android:textColor="@android:color/black"
-                android:textSize="24sp" />
+                android:textSize="24sp"/>
         </androidx.appcompat.widget.Toolbar>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/tabLayoutCenterButton"
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:translationY="-50dp"
-            android:textSize="50sp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/button_rounded"
-            android:text="@string/plus" />
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/home_navigation_view"
+        android:id="@+id/homeNavigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/drawer_menu"/>
+        />
+    <!--        app:menu="@menu/drawer_menu"-->
 </androidx.drawerlayout.widget.DrawerLayout>

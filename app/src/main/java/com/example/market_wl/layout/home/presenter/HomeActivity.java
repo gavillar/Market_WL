@@ -1,59 +1,63 @@
 package com.example.market_wl.layout.home.presenter;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
 
-import com.example.market_wl.R;
 import com.example.market_wl.databinding.ActivityHomeBinding;
 import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
+import com.example.market_wl.extensions.AppCompatActivityExtended;
+import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivityExtended {
 
     private ActivityHomeBinding activityHomeBinding;
-
-    private NavHostFragment navHostFragment;
-    private NavController navController;
-
-
 
     @Override
     protected void onCreate(
         Bundle savedInstanceState
     ) {
         super.onCreate(savedInstanceState);
-        activityHomeBinding = activityHomeBinding.inflate(getLayoutInflater());
-        setContentView(activityHomeBinding.getRoot());
-
-        initNavigation();
+        setContentView(getActivityHomeBinding().getRoot());
         getActivityHomeBindingRoot();
+        getNavigationView();
+        setFragment(savedInstanceState);
     }
 
+    private void getNavigationView() {
+        final NavigationView homeNavigationView = (
+                getActivityHomeBinding().homeNavigationView
+        );
+        final Menu menu = (
+                homeNavigationView.getMenu()
+        );
 
-    private void initNavigation() {
-        navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.homeFragmentContainerView);
+        final String[] items = new String[] {"Item 1", "Item 2"};
 
-        navController = navHostFragment.getNavController();
-
-        NavigationUI.setupWithNavController(activityHomeBinding.bottomNavigation, navController);
-
+        for (int i = 0; i < items.length; i++) {
+            menu.add(
+                    Menu.NONE, Menu.FIRST + i, Menu.NONE, items[i]
+            );
+        }
     }
-    private DrawerLayout getActivityHomeBindingRoot() {
+
+    private void setFragment(final Bundle savedInstanceState) {
+        replaceFragment(
+            savedInstanceState,
+            getActivityHomeBinding().homeFrameLayout.getId(),
+            HomeFragment.newInstance()
+        );
+    }
+
+    private void getActivityHomeBindingRoot() {
         final DrawerLayout drawerLayout = (
             getActivityHomeBinding().getRoot()
         );
         getActivityHomeBinding()
             .homeToolbarMenu.setOnClickListener(
                 view -> drawerLayout.open()
-
             );
-        return drawerLayout;
     }
 
     private ActivityHomeBinding getActivityHomeBinding() {
