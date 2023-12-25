@@ -5,6 +5,7 @@ import java.util.Map;
 
 public class DataLogger {
 
+
     public static <T> void log(String path,
                                int statusCode,
                                Map<String, Object> headers,
