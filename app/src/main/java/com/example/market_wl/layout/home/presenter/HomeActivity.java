@@ -32,12 +32,16 @@ public class HomeActivity extends AppCompatActivityExtended {
         final Menu menu = (
                 homeNavigationView.getMenu()
         );
-
         final String[] items = new String[] {"Item 1", "Item 2"};
-
         for (int i = 0; i < items.length; i++) {
+            final int I = i;
             menu.add(
                     Menu.NONE, Menu.FIRST + i, Menu.NONE, items[i]
+            ).setOnMenuItemClickListener(
+                    view -> {
+                        System.out.println(I);
+                        return false;
+                    }
             );
         }
     }
