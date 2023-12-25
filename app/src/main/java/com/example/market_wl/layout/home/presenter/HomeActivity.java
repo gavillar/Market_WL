@@ -1,71 +1,66 @@
 package com.example.market_wl.layout.home.presenter;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
+import com.example.market_wl.R;
 import com.example.market_wl.databinding.ActivityHomeBinding;
-import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
 import com.example.market_wl.extensions.AppCompatActivityExtended;
-import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivityExtended {
 
     private ActivityHomeBinding activityHomeBinding;
 
+
+
     @Override
     protected void onCreate(
-        Bundle savedInstanceState
+            Bundle savedInstanceState
     ) {
         super.onCreate(savedInstanceState);
         setContentView(getActivityHomeBinding().getRoot());
+        getHomeFragmentContainerView();
         getActivityHomeBindingRoot();
-        getNavigationView();
-        replaceFragment(
-                savedInstanceState,
-                getActivityHomeBinding().homeFrameLayout.getId(),
-                HomeFragment.newInstance()
-        );
     }
 
-    private void getNavigationView() {
-        final NavigationView homeNavigationView = (
-                getActivityHomeBinding().homeNavigationView
-        );
-        final Menu menu = (
-                homeNavigationView.getMenu()
-        );
-        final String[] items = new String[] {"Item 1", "Item 2"};
-        for (int i = 0; i < items.length; i++) {
-            final int I = i;
-            menu.add(
-                    Menu.NONE, Menu.FIRST + i, Menu.NONE, items[i]
-            ).setOnMenuItemClickListener(
-                    view -> {
-                        System.out.println(I);
-                        return false;
-                    }
-            );
-        }
-    }
 
+    private void getHomeFragmentContainerView() {
+        final NavHostFragment navHostFragment = (
+            (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(
+                    getActivityHomeBinding()
+                    .homeFragmentContainerView
+                    .getId()
+                )
+        );
+        assert navHostFragment != null;
+        final NavController navController = (
+            navHostFragment
+                .getNavController()
+        );
+        NavigationUI.setupWithNavController(activityHomeBinding.bottomNavigation, navController);
+    }
     private void getActivityHomeBindingRoot() {
         final DrawerLayout drawerLayout = (
-            getActivityHomeBinding().getRoot()
+                getActivityHomeBinding().getRoot()
         );
         getActivityHomeBinding()
-            .homeToolbarMenu.setOnClickListener(
-                view -> drawerLayout.open()
-            );
+                .homeToolbarMenu.setOnClickListener(
+                        view -> drawerLayout.open()
+
+                );
     }
 
     private ActivityHomeBinding getActivityHomeBinding() {
         if(activityHomeBinding == null) {
             activityHomeBinding = (
-                ActivityHomeBinding.inflate(
-                    getLayoutInflater()
-                )
+                    ActivityHomeBinding.inflate(
+                            getLayoutInflater()
+                    )
             );
         }
         return activityHomeBinding;
