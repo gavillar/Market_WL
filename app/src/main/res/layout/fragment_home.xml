@@ -7,16 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".layout.home.presenter.ui.home.HomeFragment">
     <LinearLayout
-        android:padding="100dp"
         android:background="@color/gray_111"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragment_home_recycler_view"
-            android:background="@color/gray_111"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/gray_111"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
