@@ -22,7 +22,11 @@ public class HomeActivity extends AppCompatActivityExtended {
         setContentView(getActivityHomeBinding().getRoot());
         getActivityHomeBindingRoot();
         getNavigationView();
-        setFragment(savedInstanceState);
+        replaceFragment(
+                savedInstanceState,
+                getActivityHomeBinding().homeFrameLayout.getId(),
+                HomeFragment.newInstance()
+        );
     }
 
     private void getNavigationView() {
@@ -44,14 +48,6 @@ public class HomeActivity extends AppCompatActivityExtended {
                     }
             );
         }
-    }
-
-    private void setFragment(final Bundle savedInstanceState) {
-        replaceFragment(
-            savedInstanceState,
-            getActivityHomeBinding().homeFrameLayout.getId(),
-            HomeFragment.newInstance()
-        );
     }
 
     private void getActivityHomeBindingRoot() {
