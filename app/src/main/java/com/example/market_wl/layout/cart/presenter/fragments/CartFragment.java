@@ -20,6 +20,8 @@ import java.util.ArrayList;
 
 public class CartFragment extends Fragment {
 
+    // amanha modificar o layout do fragment
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
