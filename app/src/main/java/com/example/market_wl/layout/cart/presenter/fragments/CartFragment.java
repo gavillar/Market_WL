@@ -69,6 +69,9 @@ public class CartFragment extends Fragment {
         itens.add(new Product(0, "Pão WickBold", "Integral", "RS 14,00"));
         itens.add(new Product(0, "Leite UHT", "Jussara", "RS 5,00"));
         itens.add(new Product(0, "Café", "3 Corações", "RS 16,00"));
+        itens.add(new Product(0, "Café", "3 Corações", "RS 16,00"));
+        itens.add(new Product(0, "Café", "3 Corações", "RS 16,00"));
+        itens.add(new Product(0, "Café", "3 Corações", "RS 16,00"));
 
 
         productAdapter = new ProductAdapter(requireContext(), itens);
