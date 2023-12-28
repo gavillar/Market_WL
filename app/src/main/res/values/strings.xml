@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Market_WL</string>
+    <string name="hamburguer">☰</string>
+    <string name="perfil">☺</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,4 +11,17 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="entrar">Entrar</string>
+    <string name="text_register">Crie uma conta clicando aqui</string>
+    <string name="tab_bar_first_item">⌂</string>
+    <string name="tab_bar_second_item">🖹</string>
+    <string name="tab_bar_first_item_description">Descrição da primeira guia</string>
+    <string name="tab_bar_second_item_description">Descrição da primeira guia</string>
+    <string name="plus">+</string>
+    <string name="happy_family">Happy Family</string>
+    <string name="temp_example">Temp 23°C | Humidity 54%</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
