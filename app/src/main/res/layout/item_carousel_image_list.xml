@@ -7,9 +7,11 @@
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_carousel"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:background="@color/white"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:layout_marginEnd="9dp"
+        android:layout_marginStart="9dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

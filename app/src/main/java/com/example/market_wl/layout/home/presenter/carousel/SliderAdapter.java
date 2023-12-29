@@ -40,10 +40,22 @@ public class SliderAdapter extends RecyclerView.Adapter<SlideViewHolder> {
 
         holder.setImage(slideItems.get(position));
 
+        if(position == slideItems.size() - 2) {
+            viewPager2.post(runnable);
+        }
     }
 
     @Override
     public int getItemCount() {
         return slideItems.size();
     }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            slideItems.addAll(slideItems);
+            notifyDataSetChanged();
+
+        }
+    };
 }
