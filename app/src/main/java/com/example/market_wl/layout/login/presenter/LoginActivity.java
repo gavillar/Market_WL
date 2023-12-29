@@ -1,8 +1,10 @@
 package com.example.market_wl.layout.login.presenter;
 
 import android.os.Bundle;
+import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.market_wl.R;
 
@@ -12,6 +14,20 @@ public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding activityLoginBinding;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getActivityLogin());
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                .replace(
+                    getActivityLoginFrameLayout().getId(),
+                    LoginFragment.newInstance()
+                )
+                .commitNow();
+        }
+    }
+
     private ActivityLoginBinding getActivityLoginBinding() {
         if (activityLoginBinding == null) {
             activityLoginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
@@ -19,14 +35,11 @@ public class LoginActivity extends AppCompatActivity {
         return activityLoginBinding;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(getActivityLoginBinding().getRoot().getId(), LoginFragment.newInstance())
-                    .commitNow();
-        }
+    private ConstraintLayout getActivityLogin() {
+        return getActivityLoginBinding().getRoot();
+    }
+
+    private FrameLayout getActivityLoginFrameLayout() {
+        return getActivityLoginBinding().loginActivityFrameLayout;
     }
 }
