@@ -10,8 +10,15 @@
 
         android:background="@color/gray_111"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_999"
+            />
 
         <include layout="@layout/item_carousel_image_list"
             android:layout_below="@id/home_toolbar"
@@ -24,12 +31,12 @@
             tools:ignore="MissingConstraints"
             android:layout_height="260dp"
             android:layout_width="match_parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fragment_home_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@color/gray_111"/>
+
 
 
 
