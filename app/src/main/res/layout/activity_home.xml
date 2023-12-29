@@ -8,9 +8,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context=".layout.home.presenter.HomeActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/homeFragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"
@@ -19,7 +22,22 @@
             android:layout_above="@id/bottom_navigation"
             android:layout_below="@+id/home_toolbar"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            app:navGraph="@navigation/nav_graph"/>
+
+        <include layout="@layout/item_carousel_image_list"
+            android:layout_below="@id/home_toolbar"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            tools:ignore="MissingConstraints"
+            android:layout_height="250dp"
+            android:layout_width="match_parent" />
+
+
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.App.BottomNavigationView"
@@ -30,11 +48,13 @@
             app:itemIconTint="@color/black"
             app:itemTextColor="@color/black"
             app:menu="@menu/bottom_navigation_menu"/>
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/home_toolbar"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@color/gray_111">
+
             <TextView
                 android:id="@+id/home_toolbar_menu"
                 android:layout_width="40dp"
@@ -44,6 +64,10 @@
                 android:text="@string/hamburguer"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"/>
+
+
+
+
             <ImageView
                 android:id="@+id/home_toolbar_profile"
                 android:layout_width="wrap_content"
@@ -55,11 +79,21 @@
                 android:textColor="@android:color/black"
                 android:textSize="24sp"/>
         </androidx.appcompat.widget.Toolbar>
+
+
+
     </RelativeLayout>
+
+
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/home_navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/drawer_menu"/>
+
+
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
