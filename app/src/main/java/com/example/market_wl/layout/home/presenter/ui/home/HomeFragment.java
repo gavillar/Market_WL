@@ -61,12 +61,15 @@ public class HomeFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+
         ArrayList<String> dataList = new ArrayList<>();
-        dataList.add("Item 1");
+        dataList.add("Ofertas");
+        dataList.add("Os mais vendidos");
+
 
 
         RecyclerView recyclerView = getFragmentHomeRecyclerView();
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 1));
 
         HomeAdapter homeAdapter = new HomeAdapter(getContext(), dataList);
         recyclerView.setAdapter(homeAdapter);

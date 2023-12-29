@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Market_WL"
         tools:targetApi="34">
         <activity
-            android:name=".layout.home.presenter.HomeActivity"
+            android:name=".layout.home.presenter.ui.home.activity.HomeActivity"
             android:exported="false"/>
         <activity
             android:name=".layout.presenter.OffersActivity"

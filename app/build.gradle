@@ -54,7 +54,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation files('libs/DApi.jar')
 
-
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
 }

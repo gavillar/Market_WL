@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
-import com.example.market_wl.layout.home.presenter.HomeActivity;
+import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
 
 
 public class LoginFragment extends Fragment {
