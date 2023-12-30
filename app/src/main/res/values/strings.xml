@@ -13,6 +13,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="entrar">Entrar</string>
+    <string name="finalizar_pedido">Finalizar pedido</string>
     <string name="text_register">Crie uma conta clicando aqui</string>
     <string name="tab_bar_first_item">⌂</string>
     <string name="tab_bar_second_item">🖹</string>
