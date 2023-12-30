@@ -33,4 +33,13 @@
         <item name="colorPrimary">@color/gray_111</item>
 
     </style>
+
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Cor da lupa -->
+        <item name="android:searchIcon">@color/black</item>
+
+        <!-- Cor do texto -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>
