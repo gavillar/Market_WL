@@ -23,5 +23,9 @@
     <string name="temp_example">Temp 23°C | Humidity 54%</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="app_logo_cart">app logo cart</string>
 
 </resources>
