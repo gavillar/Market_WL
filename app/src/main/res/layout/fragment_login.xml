@@ -6,7 +6,6 @@
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/login"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -25,11 +24,13 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_toLeftOf="@+id/fragmentLoginAppNameTextView"
-                android:src="@drawable/ic_cart" />
+                android:src="@drawable/ic_cart"
+                android:layout_toStartOf="@+id/fragmentLoginAppNameTextView"
+                android:contentDescription="@string/app_logo_cart" />
             <com.example.market_wl.components.TextViewComponent
                 android:id="@+id/fragmentLoginAppNameTextView"
                 android:text="@string/app_name"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,28 +38,27 @@
         </RelativeLayout>
         <com.example.market_wl.components.TextViewComponent
             android:layout_marginTop="180dp"
-            android:text="Login"
-            android:textSize="25dp"
-            android:layout_centerHorizontal="true"
+            android:text="@string/login"
+            android:textSize="25sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="RelativeOverlap"/>
         <com.example.market_wl.components.EditTextComponent
             android:id="@+id/editEmail"
             android:inputType="textEmailAddress"
-            android:hint="Email"
-            android:drawableRight="@drawable/ic_email"
+            android:hint="@string/email"
             android:layout_marginTop="60dp"
             style="@style/edit_Text"
-            />
+            android:drawableEnd="@drawable/ic_email"
+            android:drawableRight="@drawable/ic_email" />
         <com.example.market_wl.components.EditTextComponent
             android:id="@+id/editPassword"
             android:inputType="numberPassword"
-            android:hint="Senha"
-            android:drawableRight="@drawable/ic_eye"
+            android:hint="@string/senha"
             android:layout_marginTop="15dp"
             style="@style/edit_Text"
-            />
+            android:drawableEnd="@drawable/ic_eye"
+            android:drawableRight="@drawable/ic_eye" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
 
