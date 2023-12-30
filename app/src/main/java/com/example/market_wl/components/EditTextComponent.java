@@ -3,14 +3,16 @@ package com.example.market_wl.components;
 import android.content.Context;
 import android.text.InputFilter;
 import android.util.AttributeSet;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.market_wl.R;
+import com.example.market_wl.utils.displayMetricsUtils.DisplayMetricsUtils;
 
 public class EditTextComponent extends androidx.appcompat.widget.AppCompatEditText {
+
+    DisplayMetricsUtils displayMetricsUtils;
 
     public EditTextComponent(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -19,9 +21,17 @@ public class EditTextComponent extends androidx.appcompat.widget.AppCompatEditTe
         setBackground(getResources().getDrawable(R.drawable.edit_text));
     }
 
-    public void setPadding(int valueDp) {
-        float scale = getResources().getDisplayMetrics().density;
-        int padding = (int) (valueDp * scale + 0.5f);
+    private void setPadding(int value) {
+        int padding = getDisplayMetricsUtils().convertToDp(value);
         setPadding(padding, padding, padding, padding);
+    }
+
+    private DisplayMetricsUtils getDisplayMetricsUtils() {
+        if(displayMetricsUtils == null) {
+            displayMetricsUtils = (
+                    new DisplayMetricsUtils(this)
+            );
+        }
+        return displayMetricsUtils;
     }
 }
