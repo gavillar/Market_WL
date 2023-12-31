@@ -13,13 +13,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
-import com.example.market_wl.layout.home.presenter.HomeActivity;
+import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
 
 
 public class LoginFragment extends Fragment {
 
     private LoginViewModel mViewModel;
-    private AppCompatButton enterButton;
+
+    private FragmentLoginBinding fragmentLoginBinding;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -39,23 +40,15 @@ public class LoginFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        FragmentLoginBinding fragmentLoginBinding = FragmentLoginBinding.inflate(
-                inflater, container, false
-        );
-        setEnterButton(fragmentLoginBinding);
-        return fragmentLoginBinding.getRoot();
+        return getFragmentLoginBinding().getRoot();
     }
 
-    private AppCompatButton setEnterButton(FragmentLoginBinding fragmentLoginBinding) {
-        if(enterButton == null) {
-            enterButton = fragmentLoginBinding.enterButton;
-            enterButton.setOnClickListener(
-                    view -> {
-                        Intent intent = new Intent(getActivity(), HomeActivity.class);
-                        startActivity(intent);
-                    }
+    private FragmentLoginBinding getFragmentLoginBinding() {
+        if(fragmentLoginBinding == null) {
+            fragmentLoginBinding = FragmentLoginBinding.inflate(
+                    getLayoutInflater()
             );
         }
-        return enterButton;
+        return fragmentLoginBinding;
     }
 }
