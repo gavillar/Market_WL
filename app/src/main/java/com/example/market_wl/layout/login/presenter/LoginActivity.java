@@ -20,7 +20,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLoginActivityButton();
         setContentView(getActivityLogin());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -45,19 +44,5 @@ public class LoginActivity extends AppCompatActivity {
 
     private FrameLayout getActivityLoginFrameLayout() {
         return getActivityLoginBinding().loginActivityFrameLayout;
-    }
-
-    private void setLoginActivityButton() {
-        if(loginActivityButton == null) {
-            loginActivityButton = getActivityLoginBinding().loginActivityButton;
-            loginActivityButton.setOnClickListener(
-                    view -> {
-                        Intent intent = new Intent(
-                                this, HomeActivity.class
-                        );
-                        startActivity(intent);
-                    }
-            );
-        }
     }
 }
