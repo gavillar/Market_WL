@@ -1,6 +1,7 @@
 package com.example.market_wl.components;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 
@@ -20,6 +21,7 @@ public class ButtonComponent extends AppCompatButton {
                 getContext(), R.font.montserrat_bold
             )
         );
+        setTextColor(Color.WHITE);
         setAllCaps(false);
         setTextSize(20);
     }

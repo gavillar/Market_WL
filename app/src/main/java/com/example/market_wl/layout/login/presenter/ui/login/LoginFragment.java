@@ -22,6 +22,8 @@ public class LoginFragment extends Fragment {
 
     private FragmentLoginBinding fragmentLoginBinding;
 
+    private AppCompatButton loginEnterButton;
+
     public static LoginFragment newInstance() {
         return new LoginFragment();
     }
@@ -29,7 +31,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+        setViewModel();
         // TODO: Use the ViewModel
     }
 
@@ -40,6 +42,7 @@ public class LoginFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+        setEnterButton();
         return getFragmentLoginBinding().getRoot();
     }
 
@@ -50,5 +53,32 @@ public class LoginFragment extends Fragment {
             );
         }
         return fragmentLoginBinding;
+    }
+
+    private void setViewModel() {
+        if (mViewModel == null) {
+            mViewModel = (
+                new ViewModelProvider(this)
+                    .get(LoginViewModel.class)
+            );
+        }
+    }
+
+    private void setEnterButton() {
+        if (loginEnterButton == null) {
+            loginEnterButton = (
+                getFragmentLoginBinding()
+                    .loginEnterButton
+            );
+            loginEnterButton.setOnClickListener(
+                    view -> {
+                        Intent intent = new Intent(
+                            getContext(),
+                            HomeActivity.class
+                        );
+                        startActivity(intent);
+                    }
+            );
+        }
     }
 }
