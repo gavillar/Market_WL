@@ -9,21 +9,21 @@
     <fragment
         android:id="@+id/home_fragment"
         android:name="com.example.market_wl.layout.home.presenter.ui.home.HomeFragment"
-        android:label="fragment_home"
+        android:label="Início"
         tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/cart_fragment"
         android:name="com.example.market_wl.layout.cart.presenter.fragments.CartFragment"
-        android:label="fragment_cart"
+        android:label="Carrinho"
         tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/coupons_fragment"
         android:name="com.example.market_wl.layout.profile.presenter.fragments.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:label="Cupons"
+        tools:layout="@layout/fragment_coupons" />
     <fragment
         android:id="@+id/profile_fragment"
         android:name="com.example.market_wl.layout.coupons.presenter.fragments.CouponsFragment"
-        android:label="fragment_coupons"
-        tools:layout="@layout/fragment_coupons" />
+        android:label="Perfil"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
