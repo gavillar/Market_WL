@@ -1,10 +1,15 @@
 package com.example.market_wl.layout.login.presenter.ui.login;
 
+import static android.content.Context.INPUT_METHOD_SERVICE;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,16 +18,21 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
+import com.example.market_wl.extensions.FragmentExtended;
 import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
 
+import java.util.Objects;
 
-public class LoginFragment extends Fragment {
+
+public class LoginFragment extends FragmentExtended {
 
     private LoginViewModel mViewModel;
 
     private FragmentLoginBinding fragmentLoginBinding;
 
     private AppCompatButton loginEnterButton;
+
+    private LinearLayout loginScrollArea;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -43,6 +53,7 @@ public class LoginFragment extends Fragment {
             @Nullable Bundle savedInstanceState
     ) {
         setEnterButton();
+        setLoginScrollArea();
         return getFragmentLoginBinding().getRoot();
     }
 
@@ -78,6 +89,20 @@ public class LoginFragment extends Fragment {
                         );
                         startActivity(intent);
                     }
+            );
+        }
+    }
+
+    private void setLoginScrollArea() {
+        if(loginScrollArea == null) {
+            loginScrollArea = (
+                    getFragmentLoginBinding()
+                            .loginScrollArea
+            );
+            loginScrollArea.setOnClickListener(
+                (view) -> {
+                    hideKeyboard();
+                }
             );
         }
     }
