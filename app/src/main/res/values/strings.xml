@@ -27,6 +27,12 @@
     <string name="email">Email</string>
     <string name="senha">Senha</string>
     <string name="login">Login</string>
+    <string name="addres_cep">Cep</string>
+    <string name="addres_street">Rua</string>
+    <string name="addres_number">Número</string>
+    <string name="addres_city">Cidade</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
     <string name="app_logo_cart">app logo cart</string>
 
 </resources>

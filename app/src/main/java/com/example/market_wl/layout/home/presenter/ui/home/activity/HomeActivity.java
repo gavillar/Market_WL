@@ -1,11 +1,19 @@
 package com.example.market_wl.layout.home.presenter.ui.home.activity;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,10 +26,13 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.example.market_wl.R;
 import com.example.market_wl.databinding.ActivityHomeBinding;
 import com.example.market_wl.extensions.AppCompatActivityExtended;
+import com.example.market_wl.layout.address.presenter.AdressFragment;
 import com.example.market_wl.layout.cart.presenter.fragments.CartFragment;
+import com.example.market_wl.layout.coupons.presenter.fragments.CouponsFragment;
 import com.example.market_wl.layout.home.presenter.carousel.SlideItem;
 import com.example.market_wl.layout.home.presenter.carousel.SliderAdapter;
 import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +48,10 @@ public class HomeActivity extends AppCompatActivityExtended {
         super.onCreate(savedInstanceState);
         setContentView(getActivityHomeBinding().getRoot());
         configureNavigation();
+        configureDrawerNavigation();
         getActivityHomeBindingRoot();
-    }
 
+    }
 
     private void configureNavigation() {
         final NavHostFragment navHostFragment = (
@@ -91,6 +103,40 @@ public class HomeActivity extends AppCompatActivityExtended {
 
                 );
     }
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    ActionBarDrawerToggle drawerToggle;
+
+    private void configureDrawerNavigation() {
+
+        drawerLayout = findViewById(R.id.home_drawerLayout);
+        navigationView = findViewById(R.id.home_navigation_view);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                Fragment selectedFragment = null;
+
+                switch (item.getItemId()) {
+                    case R.id.adress_fragment:
+                        selectedFragment = new AdressFragment();
+
+                        if(selectedFragment != null) {
+                            getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.adress_fragment, new AdressFragment())
+                                    .commit();
+                        }
+                }
+                return true;
+            }
+        });
+    }
+
 
     private ActivityHomeBinding getActivityHomeBinding() {
         if(activityHomeBinding == null) {
