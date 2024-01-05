@@ -15,7 +15,11 @@
         android:id="@+id/cart_fragment"
         android:name="com.example.market_wl.layout.cart.presenter.fragments.CartFragment"
         android:label="Carrinho"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_fragment_to_paymentsFragment"
+            app:destination="@id/payments_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/coupons_fragment"
         android:name="com.example.market_wl.layout.profile.presenter.fragments.ProfileFragment"
@@ -26,4 +30,8 @@
         android:name="com.example.market_wl.layout.coupons.presenter.fragments.CouponsFragment"
         android:label="Perfil"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/payments_fragment"
+        android:name="com.example.market_wl.layout.payments.ui.payments.fragments.PaymentsFragment"
+        android:label="Pagamento" />
 </navigation>
