@@ -24,6 +24,14 @@
             app:navGraph="@navigation/nav_graph"/>
 
 
+        <com.android.car.ui.uxr.DrawableStateRelativeLayout
+            android:id="@+id/adress_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.android.car.ui.uxr.DrawableStateRelativeLayout>
+
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.App.BottomNavigationView"

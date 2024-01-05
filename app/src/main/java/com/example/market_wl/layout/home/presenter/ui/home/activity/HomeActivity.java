@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,6 +41,13 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivityExtended {
 
     private ActivityHomeBinding activityHomeBinding;
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    ActionBarDrawerToggle drawerToggle;
+
+
+    private long lastBackPressedTime;
 
     @Override
     protected void onCreate(
@@ -104,10 +112,6 @@ public class HomeActivity extends AppCompatActivityExtended {
                 );
     }
 
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    ActionBarDrawerToggle drawerToggle;
-
     private void configureDrawerNavigation() {
 
         drawerLayout = findViewById(R.id.home_drawerLayout);
@@ -129,13 +133,19 @@ public class HomeActivity extends AppCompatActivityExtended {
                         if(selectedFragment != null) {
                             getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.adress_fragment, new AdressFragment())
+                                    .addToBackStack(null)
                                     .commit();
                         }
                 }
+                drawerLayout.closeDrawer(GravityCompat.START);
+
                 return true;
             }
         });
     }
+
+
+
 
 
     private ActivityHomeBinding getActivityHomeBinding() {
