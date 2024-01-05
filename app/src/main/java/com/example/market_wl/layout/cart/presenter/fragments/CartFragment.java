@@ -3,15 +3,17 @@ package com.example.market_wl.layout.cart.presenter.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 
 import com.example.market_wl.R;
+import com.example.market_wl.components.ButtonComponent;
 import com.example.market_wl.layout.cart.Adapter.ProductAdapter;
 import com.example.market_wl.layout.cart.model.Product;
 
@@ -20,8 +22,8 @@ import java.util.ArrayList;
 
 public class CartFragment extends Fragment {
 
-    // amanha modificar o layout do fragment
-
+    private View view;
+    private ButtonComponent confirmButton;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -52,6 +54,7 @@ public class CartFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -62,7 +65,10 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_cart, container, false);
+        view = inflater.inflate(R.layout.fragment_cart, container, false);
+
+        setupView();
+
 
         itens = new ArrayList<Product>();
         itens.add(new Product(0, "Mortadela", "100g", "RS 3,00"));
@@ -82,5 +88,23 @@ public class CartFragment extends Fragment {
         recyclerView.setAdapter(productAdapter);
 
         return view;
+    }
+
+    private void setupView() {
+        setupConfirmButton();
+    }
+
+    private void setupConfirmButton() {
+        confirmButton = view.findViewById(R.id.confirm_buy_button);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onConfirmButtonClick();
+            }
+        });
+    }
+    private void onConfirmButtonClick() {
+        NavController navController = Navigation.findNavController(requireView());
+        navController.navigate(R.id.payments_fragment);
     }
 }
