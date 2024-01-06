@@ -9,11 +9,9 @@ import androidx.fragment.app.Fragment;
 
 public class AppCompatActivityExtended extends AppCompatActivity {
     protected void replaceFragment(
-            final Bundle savedInstanceState,
             final @IdRes int containerViewId,
             final @NonNull Fragment fragment
     ) {
-        if (savedInstanceState != null) return;
         getSupportFragmentManager()
             .beginTransaction()
             .replace(containerViewId, fragment)
