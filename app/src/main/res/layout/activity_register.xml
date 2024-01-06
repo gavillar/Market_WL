@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/registerActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,16 +17,21 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white">
-            <ImageView
-                style="@style/tool_bar_icon"
-                android:id="@+id/home_toolbar_profile"
-                android:layout_gravity="start"
-                android:src="@drawable/ic_arrow_back"/>
-            <ImageView
-                style="@style/tool_bar_icon"
-                android:id="@+id/home_toolbar_menu"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_exit"/>
+            <LinearLayout
+                style="@style/tool_bar_linear_layout">
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:layout_gravity="start"
+                    android:src="@drawable/ic_arrow_back"/>
+                <com.example.market_wl.components.TextViewComponent
+                    style="@style/tool_bar_title"
+                    android:id="@+id/homeToolbarTitle"/>
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:id="@+id/homeToolbarMenu"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_exit"/>
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
         <FrameLayout
             android:id="@+id/registerActivityFrameLayout"

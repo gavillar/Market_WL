@@ -58,10 +58,13 @@ public class HomeActivity extends AppCompatActivityExtended {
 
         NavigationUI.setupWithNavController(activityHomeBinding.bottomNavigation, navController);
 
-        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            String fragmentLabel = destination != null ? destination.getLabel().toString() : "";
-            updateToolbarTitle(fragmentLabel);
-        });
+        navController.addOnDestinationChangedListener(
+            (controller, destination, arguments) -> {
+                assert destination.getLabel() != null;
+                String fragmentLabel = destination.getLabel().toString();
+                getActivityHomeBinding().homeToolbarTitle.setText(fragmentLabel);
+            }
+        );
     }
 
     private void updateToolbarTitle(String title) {
