@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/home_toolbar"
+            android:id="@+id/registerToolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white">
@@ -25,10 +25,10 @@
                     android:src="@drawable/ic_arrow_back"/>
                 <com.example.market_wl.components.TextViewComponent
                     style="@style/tool_bar_title"
-                    android:id="@+id/homeToolbarTitle"/>
+                    android:id="@+id/registerToolbarTitle"/>
                 <ImageView
                     style="@style/tool_bar_icon"
-                    android:id="@+id/homeToolbarMenu"
+                    android:id="@+id/registerToolbarMenu"
                     android:layout_gravity="end"
                     android:src="@drawable/ic_exit"/>
             </LinearLayout>
