@@ -35,15 +35,21 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/white">
-            <ImageView
-                style="@style/tool_bar_icon"
-                android:layout_gravity="start"
-                android:src="@drawable/ic_arrow_back"/>
-            <ImageView
-                style="@style/tool_bar_icon"
-                android:id="@+id/homeToolbarMenu"
-                android:layout_gravity="end"
-                android:src="@drawable/ic_menu"/>
+            <LinearLayout
+                style="@style/tool_bar_linear_layout">
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:layout_gravity="start"
+                    android:src="@drawable/ic_arrow_back"/>
+                <com.example.market_wl.components.TextViewComponent
+                    style="@style/tool_bar_title"
+                    android:id="@+id/homeToolbarTitle"/>
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:id="@+id/homeToolbarMenu"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_menu"/>
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
