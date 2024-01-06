@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/loginScrollArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".layout.login.presenter.ui.login.LoginFragment">
+            <com.example.market_wl.components.TextViewComponent
+                android:layout_marginTop="50dp"
+                android:text="@string/qual_o_seu_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.example.market_wl.components.EditTextComponent
+                android:hint="@string/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.example.market_wl.components.ButtonComponent
+        android:id="@+id/loginEnterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/entrar" />
+</LinearLayout>
+

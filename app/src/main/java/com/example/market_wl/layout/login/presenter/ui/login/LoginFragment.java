@@ -1,27 +1,21 @@
 package com.example.market_wl.layout.login.presenter.ui.login;
 
-import static android.content.Context.INPUT_METHOD_SERVICE;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
 import com.example.market_wl.extensions.FragmentExtended;
 import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
-
-import java.util.Objects;
+import com.example.market_wl.layout.register.presenter.RegisterActivity;
 
 
 public class LoginFragment extends FragmentExtended {
@@ -31,6 +25,8 @@ public class LoginFragment extends FragmentExtended {
     private FragmentLoginBinding fragmentLoginBinding;
 
     private AppCompatButton loginEnterButton;
+
+    private AppCompatButton registerButton;
 
     private LinearLayout loginScrollArea;
 
@@ -54,6 +50,7 @@ public class LoginFragment extends FragmentExtended {
     ) {
         setEnterButton();
         setLoginScrollArea();
+        setRegisterButton();
         return getFragmentLoginBinding().getRoot();
     }
 
@@ -103,6 +100,23 @@ public class LoginFragment extends FragmentExtended {
                 (view) -> {
                     hideKeyboard();
                 }
+            );
+        }
+    }
+
+    private void setRegisterButton() {
+        if(registerButton == null) {
+            registerButton = (
+                    getFragmentLoginBinding().registerButton
+            );
+            registerButton.setOnClickListener(
+                    (view) -> {
+                        Intent intent = new Intent(
+                                getContext(),
+                                RegisterActivity.class
+                        );
+                        startActivity(intent);
+                    }
             );
         }
     }
