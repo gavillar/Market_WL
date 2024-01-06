@@ -9,25 +9,35 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.market_wl.databinding.FragmentRegisterBinding;
+import com.example.market_wl.components.ButtonComponent;
+import com.example.market_wl.components.EditTextComponent;
+import com.example.market_wl.components.TextViewComponent;
 import com.example.market_wl.extensions.FragmentExtended;
 
 
-public class RegisterFragment extends FragmentExtended {
+public abstract class RegisterFragment extends FragmentExtended {
 
     private RegisterViewModel mViewModel;
 
-    private FragmentRegisterBinding fragmentRegisterBinding;
+    private EditTextComponent registerEditText;
 
-    public static RegisterFragment newInstance() {
-        return new RegisterFragment();
+    private TextViewComponent registerTextView;
+
+    private ButtonComponent registerNextButton;
+    private TextViewComponent toolbarTitle;
+    private com.example.market_wl.databinding.FragmentRegisterBinding fragmentRegisterBinding;
+
+    public RegisterFragment(
+            final TextViewComponent toolbarTitle
+    ) {
+        super();
+        this.toolbarTitle = toolbarTitle;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setViewModel();
-        // TODO: Use the ViewModel
     }
 
     @Nullable
@@ -40,9 +50,9 @@ public class RegisterFragment extends FragmentExtended {
         return getFragmentRegisterBinding().getRoot();
     }
 
-    private FragmentRegisterBinding getFragmentRegisterBinding() {
+    protected com.example.market_wl.databinding.FragmentRegisterBinding getFragmentRegisterBinding() {
         if(fragmentRegisterBinding == null) {
-            fragmentRegisterBinding = FragmentRegisterBinding.inflate(
+            fragmentRegisterBinding = com.example.market_wl.databinding.FragmentRegisterBinding.inflate(
                     getLayoutInflater()
             );
         }
@@ -56,5 +66,29 @@ public class RegisterFragment extends FragmentExtended {
                     .get(RegisterViewModel.class)
             );
         }
+    }
+    protected EditTextComponent getRegisterEditText() {
+        if (registerEditText == null) {
+            registerEditText = getFragmentRegisterBinding().registerEditText;
+        }
+        return registerEditText;
+    }
+
+    protected TextViewComponent getRegisterTextView() {
+        if (registerTextView == null) {
+            registerTextView = getFragmentRegisterBinding().registerTextView;
+        }
+        return registerTextView;
+    }
+
+    protected ButtonComponent getRegisterNextButton() {
+        if (registerNextButton == null) {
+            registerNextButton = getFragmentRegisterBinding().registerNextButton;
+        }
+        return registerNextButton;
+    }
+
+    protected TextViewComponent getToolbarTitle() {
+        return toolbarTitle;
     }
 }

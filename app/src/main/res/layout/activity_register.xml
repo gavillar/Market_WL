@@ -21,6 +21,7 @@
                 style="@style/tool_bar_linear_layout">
                 <ImageView
                     style="@style/tool_bar_icon"
+                    android:id="@+id/registerToolbarBack"
                     android:layout_gravity="start"
                     android:src="@drawable/ic_arrow_back"/>
                 <com.example.market_wl.components.TextViewComponent
@@ -28,7 +29,7 @@
                     android:id="@+id/registerToolbarTitle"/>
                 <ImageView
                     style="@style/tool_bar_icon"
-                    android:id="@+id/registerToolbarMenu"
+                    android:id="@+id/registerToolbarExit"
                     android:layout_gravity="end"
                     android:src="@drawable/ic_exit"/>
             </LinearLayout>
