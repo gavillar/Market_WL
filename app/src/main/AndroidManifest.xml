@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Splash"
         tools:targetApi="34">
         <activity
+            android:name=".layout.register.presenter.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaymentsActivity"
             android:exported="false" />
         <activity

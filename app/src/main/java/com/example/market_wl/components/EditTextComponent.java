@@ -1,6 +1,7 @@
 package com.example.market_wl.components;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 
@@ -18,6 +19,7 @@ public class EditTextComponent extends androidx.appcompat.widget.AppCompatEditTe
         super(context, attrs);
         setFilters(new InputFilter[] {new InputFilter.LengthFilter(20)});
         setPadding(20);
+        setTextColor(Color.GRAY);
         setBackground(getResources().getDrawable(R.drawable.edit_text));
     }
 

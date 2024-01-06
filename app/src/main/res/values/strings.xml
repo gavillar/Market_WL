@@ -30,5 +30,7 @@
     <string name="continuar">Continuar</string>
     <string name="app_logo_cart">app logo cart</string>
     <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="qual_o_seu_email">Qual o seu email?</string>
 
 </resources>
