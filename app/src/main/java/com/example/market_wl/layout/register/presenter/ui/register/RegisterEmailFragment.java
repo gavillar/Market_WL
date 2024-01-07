@@ -13,9 +13,10 @@ import com.example.market_wl.R;
 import com.example.market_wl.components.EditTextComponent;
 import com.example.market_wl.components.TextViewComponent;
 import com.example.market_wl.extensions.FragmentExtended;
+import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
 
 
-public class RegisterEmailFragment extends RegisterFragment {
+public class RegisterEmailFragment extends RegisterFragment implements RegisterNavigation {
 
     public RegisterEmailFragment(TextViewComponent toolbarTitle) {
         super(toolbarTitle);
@@ -48,7 +49,9 @@ public class RegisterEmailFragment extends RegisterFragment {
         getRegisterTextView().setText(getResources().getText(R.string.qual_o_seu_email));
     }
 
-    private void setRegisterNextButton() {
+
+    @Override
+    public void setRegisterNextButton() {
         getRegisterNextButton().setOnClickListener(
                 view -> {
                     replaceFragment(
