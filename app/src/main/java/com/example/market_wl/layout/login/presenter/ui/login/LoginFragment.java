@@ -5,21 +5,30 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
-import com.example.market_wl.layout.home.presenter.HomeActivity;
+import com.example.market_wl.extensions.FragmentExtended;
+import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
+import com.example.market_wl.layout.register.presenter.RegisterActivity;
 
 
-public class LoginFragment extends Fragment {
+public class LoginFragment extends FragmentExtended {
 
     private LoginViewModel mViewModel;
-    private AppCompatButton enterButton;
+
+    private FragmentLoginBinding fragmentLoginBinding;
+
+    private AppCompatButton loginEnterButton;
+
+    private AppCompatButton registerButton;
+
+    private LinearLayout loginScrollArea;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -28,7 +37,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+        setViewModel();
         // TODO: Use the ViewModel
     }
 
@@ -39,23 +48,76 @@ public class LoginFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
-        FragmentLoginBinding fragmentLoginBinding = FragmentLoginBinding.inflate(
-                inflater, container, false
-        );
-        setEnterButton(fragmentLoginBinding);
-        return fragmentLoginBinding.getRoot();
+        setEnterButton();
+        setLoginScrollArea();
+        setRegisterButton();
+        return getFragmentLoginBinding().getRoot();
     }
 
-    private AppCompatButton setEnterButton(FragmentLoginBinding fragmentLoginBinding) {
-        if(enterButton == null) {
-            enterButton = fragmentLoginBinding.enterButton;
-            enterButton.setOnClickListener(
+    private FragmentLoginBinding getFragmentLoginBinding() {
+        if(fragmentLoginBinding == null) {
+            fragmentLoginBinding = FragmentLoginBinding.inflate(
+                    getLayoutInflater()
+            );
+        }
+        return fragmentLoginBinding;
+    }
+
+    private void setViewModel() {
+        if (mViewModel == null) {
+            mViewModel = (
+                new ViewModelProvider(this)
+                    .get(LoginViewModel.class)
+            );
+        }
+    }
+
+    private void setEnterButton() {
+        if (loginEnterButton == null) {
+            loginEnterButton = (
+                getFragmentLoginBinding()
+                    .loginEnterButton
+            );
+            loginEnterButton.setOnClickListener(
                     view -> {
-                        Intent intent = new Intent(getActivity(), HomeActivity.class);
+                        Intent intent = new Intent(
+                            getContext(),
+                            HomeActivity.class
+                        );
                         startActivity(intent);
                     }
             );
         }
-        return enterButton;
+    }
+
+    private void setLoginScrollArea() {
+        if(loginScrollArea == null) {
+            loginScrollArea = (
+                    getFragmentLoginBinding()
+                            .loginScrollArea
+            );
+            loginScrollArea.setOnClickListener(
+                (view) -> {
+                    hideKeyboard();
+                }
+            );
+        }
+    }
+
+    private void setRegisterButton() {
+        if(registerButton == null) {
+            registerButton = (
+                    getFragmentLoginBinding().registerButton
+            );
+            registerButton.setOnClickListener(
+                    (view) -> {
+                        Intent intent = new Intent(
+                                getContext(),
+                                RegisterActivity.class
+                        );
+                        startActivity(intent);
+                    }
+            );
+        }
     }
 }

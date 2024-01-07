@@ -1,98 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".layout.login.presenter.ui.login.LoginFragment">
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_cart"
-        />
-
-    <View
-        android:id="@+id/container_components"
-        style="@style/containerComponents"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"/>
-
-    <EditText
-        android:id="@+id/edit_email"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        android:drawableRight="@drawable/ic_email"
-        style="@style/edit_Text"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintEnd_toEndOf="@id/container_components"
-        app:layout_constraintTop_toTopOf="@id/container_components"
-        />
-
-
-    <EditText
-        android:id="@+id/edit_password"
-        android:inputType="numberPassword"
-        android:hint="Senha"
-        android:drawableRight="@drawable/ic_eye"
-        style="@style/edit_Text"
-        app:layout_constraintTop_toBottomOf="@id/edit_email"
-        app:layout_constraintStart_toStartOf="@id/container_components"
-        app:layout_constraintEnd_toEndOf="@id/container_components"
-        />
-
-    <androidx.appcompat.widget.AppCompatButton
-        style="@style/button"
-        android:id="@+id/enter_button"
-        android:text="@string/entrar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_password"
-        />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_components"
-        android:visibility="invisible"
-
-        />
-
-    <TextView
-        android:id="@+id/text_registerView"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_register"
-        app:layout_constraintTop_toBottomOf="@id/progressBar"
-        android:textSize="20sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-
+    android:background="@color/white"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/loginScrollArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:gravity="center_horizontal"
+            tools:context=".layout.login.presenter.ui.login.LoginFragment"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_marginTop="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_toLeftOf="@+id/fragmentLoginAppNameTextView"
+                    android:src="@drawable/ic_cart"
+                    android:layout_toStartOf="@+id/fragmentLoginAppNameTextView"
+                    android:contentDescription="@string/app_logo_cart" />
+                <com.example.market_wl.components.TextViewComponent
+                    android:id="@+id/fragmentLoginAppNameTextView"
+                    android:text="@string/app_name"
+                    android:textSize="30sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="RelativeOverlap"/>
+            </RelativeLayout>
+            <com.example.market_wl.components.TextViewComponent
+                android:layout_marginTop="180dp"
+                android:text="@string/login"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="RelativeOverlap"/>
+            <com.example.market_wl.components.EditTextComponent
+                android:id="@+id/editEmail"
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"
+                android:layout_marginTop="60dp"
+                android:drawableEnd="@drawable/ic_email"
+                android:drawableRight="@drawable/ic_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.example.market_wl.components.EditTextComponent
+                android:id="@+id/editPassword"
+                android:inputType="numberPassword"
+                android:hint="@string/senha"
+                android:layout_marginTop="15dp"
+                android:drawableEnd="@drawable/ic_eye"
+                android:drawableRight="@drawable/ic_eye"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.example.market_wl.components.CleanButtonComponent
+                android:id="@+id/forgotPasswordButton"
+                android:background="@color/transparent"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:text="@string/esqueceu_a_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.example.market_wl.components.CleanButtonComponent
+                android:id="@+id/registerButton"
+                android:background="@color/transparent"
+                android:textColor="@color/black"
+                android:layout_marginBottom="60dp"
+                android:text="@string/criar_conta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+    <com.example.market_wl.components.ButtonComponent
+        android:id="@+id/loginEnterButton"
+        android:text="@string/entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
 

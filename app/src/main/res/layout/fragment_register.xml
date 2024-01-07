@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    android:orientation="vertical">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/loginScrollArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:context=".layout.login.presenter.ui.login.LoginFragment">
+            <com.example.market_wl.components.TextViewComponent
+                android:id="@+id/registerTextView"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.example.market_wl.components.EditTextComponent
+                android:id="@+id/registerEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/adress_layout"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/street_EditText"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/number_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/complement_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/city_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/locate_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/state_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.example.market_wl.components.ButtonComponent
+        android:id="@+id/registerNextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/continuar" />
+</LinearLayout>
+

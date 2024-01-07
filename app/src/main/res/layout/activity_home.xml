@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".layout.home.presenter.HomeActivity">
+    tools:context=".layout.home.presenter.ui.home.activity.HomeActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +19,7 @@
             android:layout_above="@id/bottom_navigation"
             android:layout_below="@+id/home_toolbar"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            app:navGraph="@navigation/nav_graph"/>
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             style="@style/Widget.App.BottomNavigationView"
@@ -33,27 +33,23 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/home_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/gray_111">
-            <TextView
-                android:id="@+id/home_toolbar_menu"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="start"
-                android:gravity="center"
-                android:text="@string/hamburguer"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"/>
-            <ImageView
-                android:id="@+id/home_toolbar_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:src="@drawable/ic_person"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white">
+            <LinearLayout
+                style="@style/tool_bar_linear_layout">
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:layout_gravity="start"
+                    android:src="@drawable/ic_arrow_back"/>
+                <com.example.market_wl.components.TextViewComponent
+                    style="@style/tool_bar_title"
+                    android:id="@+id/homeToolbarTitle"/>
+                <ImageView
+                    style="@style/tool_bar_icon"
+                    android:id="@+id/homeToolbarMenu"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_menu"/>
+            </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
     </RelativeLayout>
     <com.google.android.material.navigation.NavigationView
