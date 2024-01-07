@@ -15,7 +15,7 @@
         android:clipToPadding="false" />
 
     <com.example.market_wl.components.ButtonComponent
-        android:id="@+id/confirm_buy_button"
+        android:id="@+id/confirm_payment_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

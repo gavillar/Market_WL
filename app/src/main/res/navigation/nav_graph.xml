@@ -33,5 +33,14 @@
     <fragment
         android:id="@+id/payments_fragment"
         android:name="com.example.market_wl.layout.payments.ui.payments.fragments.PaymentsFragment"
-        android:label="Pagamento" />
+        android:label="Pagamento" >
+        <action
+            android:id="@+id/action_payments_fragment_to_moneyFragment"
+            app:destination="@id/money_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/money_Fragment"
+        android:name="com.example.market_wl.layout.payments.money.fragments.MoneyFragment"
+        android:label="Dinheiro"
+        tools:layout="@layout/fragment_money" />
 </navigation>

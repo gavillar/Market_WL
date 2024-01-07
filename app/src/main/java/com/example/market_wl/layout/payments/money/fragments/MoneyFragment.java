@@ -21,6 +21,9 @@ public class MoneyFragment extends Fragment {
 
     private MoneyViewModel mViewModel;
 
+    View view;
+
+
     private ButtonComponent confirmButton;
 
     public static MoneyFragment newInstance() {
@@ -28,14 +31,15 @@ public class MoneyFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
+        view = inflater.inflate(R.layout.fragment_money, container, false);
 
 
-
-        return inflater.inflate(R.layout.fragment_money, container, false);
+        return view;
     }
 
     @Override
@@ -46,6 +50,11 @@ public class MoneyFragment extends Fragment {
     }
 
 
+    private void setConfirmButton() {
+
+
+
+    }
 
 
 }
