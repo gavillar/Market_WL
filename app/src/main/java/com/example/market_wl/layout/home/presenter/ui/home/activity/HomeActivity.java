@@ -1,6 +1,7 @@
 package com.example.market_wl.layout.home.presenter.ui.home.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ import com.example.market_wl.layout.cart.presenter.fragments.CartFragment;
 import com.example.market_wl.layout.home.presenter.carousel.SlideItem;
 import com.example.market_wl.layout.home.presenter.carousel.SliderAdapter;
 import com.example.market_wl.layout.home.presenter.ui.home.HomeFragment;
+import com.example.market_wl.utils.Network.RequestAsync;
+import com.github.djunqueirao.RequestManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +42,6 @@ public class HomeActivity extends AppCompatActivityExtended {
         configureNavigation();
         getActivityHomeBindingRoot();
     }
-
 
     private void configureNavigation() {
         final NavHostFragment navHostFragment = (
