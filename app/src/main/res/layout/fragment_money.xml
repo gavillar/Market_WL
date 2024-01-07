@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/border_background"
+    tools:context=".layout.payments.money.fragments.MoneyFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/informe_o_valor"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp"
+
+        />
+
+    <com.example.market_wl.components.EditTextComponent
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="@string/valor"
+        android:layout_marginTop="20dp">
+
+
+
+    </com.example.market_wl.components.EditTextComponent>
+
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="@string/troco"
+        android:textColor="@color/green"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="50dp"
+        />
+
+</LinearLayout>

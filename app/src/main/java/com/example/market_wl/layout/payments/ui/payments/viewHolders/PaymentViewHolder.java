@@ -8,8 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.market_wl.R;
+import com.example.market_wl.interfaces.OnItemClickListener;
 
-public class PaymentViewHolder extends RecyclerView.ViewHolder {
+public class PaymentViewHolder extends RecyclerView.ViewHolder  {
 
     public TextView type_Text;
 
