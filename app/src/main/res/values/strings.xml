@@ -31,10 +31,26 @@
     <string name="login">Login</string>
     <string name="continuar">Continuar</string>
     <string name="app_logo_cart">app logo cart</string>
+
+
+    // Login
     <string name="esqueceu_a_senha">Esqueceu a senha?</string>
     <string name="criar_conta">Criar conta</string>
+
+
+
+
+
+    //Register
     <string name="qual_o_seu_email">Qual o seu email?</string>
     <string name="qual_o_seu_nome">Qual o seu nome?</string>
     <string name="qual_o_seu_cpf">Qual o seu CPF?</string>
+
+
+    //Payment
+    <string name="informe_o_valor">Informe o valor a ser pago em dinheiro:</string>
+    <string name="valor">Valor</string>
+    <string name="troco">Troco:</string>
+    <string name="valor_troco">R$ 10,89</string>
 
 </resources>

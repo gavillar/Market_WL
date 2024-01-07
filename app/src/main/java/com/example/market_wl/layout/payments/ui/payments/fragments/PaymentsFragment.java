@@ -9,10 +9,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.market_wl.R;
+import com.example.market_wl.components.ButtonComponent;
 import com.example.market_wl.layout.payments.model.Payment;
 import com.example.market_wl.layout.payments.ui.payments.adapter.PaymentAdapter;
 import com.example.market_wl.layout.payments.ui.payments.viewModels.PaymentsViewModel;
@@ -31,6 +34,8 @@ public class PaymentsFragment extends Fragment {
 
     private ArrayList<Payment> itens;
 
+    private ButtonComponent confirmButton;
+
 
 
     public static PaymentsFragment newInstance() {
@@ -41,13 +46,16 @@ public class PaymentsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(PaymentsViewModel.class);
-        // TODO: Use the ViewModel
+
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
+
+
 
         view = inflater.inflate(R.layout.fragment_payments, container, false);
 
@@ -66,7 +74,22 @@ public class PaymentsFragment extends Fragment {
         recyclerView.setAdapter(PaymentAdapter);
 
 
+        setConfirmButton();
         return view;
     }
 
+    private void setConfirmButton() {
+
+        confirmButton = view.findViewById(R.id.confirm_payment_button);
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(requireView());
+                navController.navigate(R.id.money_Fragment);
+            }
+        });
+    }
+
 }
+
