@@ -10,9 +10,10 @@ import androidx.annotation.Nullable;
 
 import com.example.market_wl.R;
 import com.example.market_wl.components.TextViewComponent;
+import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
 
 
-public class RegisterCpfFragment extends RegisterFragment {
+public class RegisterCpfFragment extends RegisterFragment implements RegisterNavigation {
 
     public RegisterCpfFragment(TextViewComponent toolbarTitle) {
         super(toolbarTitle);
@@ -32,6 +33,7 @@ public class RegisterCpfFragment extends RegisterFragment {
     ) {
         setRegisterEditText();
         setRegisterTextView();
+        setRegisterNextButton();
         getToolbarTitle().setText(getResources().getText(R.string.cpf));
         return getFragmentRegisterBinding().getRoot();
     }
@@ -41,5 +43,18 @@ public class RegisterCpfFragment extends RegisterFragment {
 
     private void setRegisterTextView() {
         getRegisterTextView().setText(getResources().getText(R.string.qual_o_seu_cpf));
+    }
+
+
+    @Override
+    public void setRegisterNextButton() {
+        getRegisterNextButton().setOnClickListener(
+                view -> {
+                    replaceFragment(
+                            R.id.registerActivityFrameLayout,
+                            new RegisterAdressFragment(getToolbarTitle())
+                    );
+                }
+        );
     }
 }

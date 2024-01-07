@@ -29,6 +29,64 @@
                 android:id="@+id/registerEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/adress_layout"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/street_EditText"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/number_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/complement_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/city_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/locate_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <com.example.market_wl.components.EditTextComponent
+                    android:id="@+id/state_EditText"
+                    android:layout_marginTop="10dp"
+                    android:visibility="invisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
     <com.example.market_wl.components.ButtonComponent

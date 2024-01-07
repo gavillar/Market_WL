@@ -10,9 +10,10 @@ import androidx.annotation.Nullable;
 
 import com.example.market_wl.R;
 import com.example.market_wl.components.TextViewComponent;
+import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
 
 
-public class RegisterNameFragment extends RegisterFragment {
+public class RegisterNameFragment extends RegisterFragment implements RegisterNavigation {
 
     public RegisterNameFragment(TextViewComponent toolbarTitle) {
         super(toolbarTitle);
@@ -44,14 +45,16 @@ public class RegisterNameFragment extends RegisterFragment {
         getRegisterTextView().setText(getResources().getText(R.string.qual_o_seu_nome));
     }
 
-    private void setRegisterNextButton() {
+
+    @Override
+    public void setRegisterNextButton() {
         getRegisterNextButton().setOnClickListener(
-            view -> {
-                replaceFragment(
-                    R.id.registerActivityFrameLayout,
-                    new RegisterEmailFragment(getToolbarTitle())
-                );
-            }
+                view -> {
+                    replaceFragment(
+                            R.id.registerActivityFrameLayout,
+                            new RegisterEmailFragment(getToolbarTitle())
+                    );
+                }
         );
     }
 }
