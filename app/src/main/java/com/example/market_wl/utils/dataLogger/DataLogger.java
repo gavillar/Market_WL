@@ -1,10 +1,25 @@
-package com.example.market_wl.DataLogger;
+package com.example.market_wl.utils.dataLogger;
+
+import com.github.djunqueirao.RequestResponse;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class DataLogger {
 
+    public static <T> void log(
+            final RequestResponse requestResponse
+    ) {
+        log(
+            null,
+            requestResponse.getCode(),
+            null,
+            requestResponse.getError().getMessage(),
+            null,
+            requestResponse.getMessage(),
+            requestResponse.getBody()
+        );
+    }
 
     public static <T> void log(String path,
                                int statusCode,
