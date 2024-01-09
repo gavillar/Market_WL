@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Splash"
         tools:targetApi="34">
         <activity
+            android:name=".layout.forgot_password.presenter.ForgotPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
             android:name=".layout.register.presenter.RegisterActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize"/>

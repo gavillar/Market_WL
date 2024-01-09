@@ -22,14 +22,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(getActivityLogin());
         setNavController();
-//        if (savedInstanceState == null) {
-//            getSupportFragmentManager().beginTransaction()
-//                .replace(
-//                    getLoginActivityFragmentContainerView().getId(),
-//                    LoginFragment.newInstance()
-//                )
-//                .commitNow();
-//        }
     }
 
     private ActivityLoginBinding getActivityLoginBinding() {
