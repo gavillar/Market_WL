@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.market_wl.databinding.FragmentLoginBinding;
 import com.example.market_wl.extensions.FragmentExtended;
+import com.example.market_wl.layout.forgot_password.presenter.ForgotPasswordActivity;
 import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
 import com.example.market_wl.layout.register.presenter.RegisterActivity;
 
@@ -27,6 +28,8 @@ public class LoginFragment extends FragmentExtended {
     private AppCompatButton loginEnterButton;
 
     private AppCompatButton registerButton;
+
+    private AppCompatButton forgotPasswordButton;
 
     private LinearLayout loginScrollArea;
 
@@ -51,6 +54,7 @@ public class LoginFragment extends FragmentExtended {
         setEnterButton();
         setLoginScrollArea();
         setRegisterButton();
+        setForgotPasswordButton();
         return getFragmentLoginBinding().getRoot();
     }
 
@@ -114,6 +118,23 @@ public class LoginFragment extends FragmentExtended {
                         Intent intent = new Intent(
                                 getContext(),
                                 RegisterActivity.class
+                        );
+                        startActivity(intent);
+                    }
+            );
+        }
+    }
+
+    public void setForgotPasswordButton() {
+        if(forgotPasswordButton == null) {
+            forgotPasswordButton = (
+                    getFragmentLoginBinding().forgotPasswordButton
+            );
+            forgotPasswordButton.setOnClickListener(
+                    (view) -> {
+                        Intent intent = new Intent(
+                                getContext(),
+                                ForgotPasswordActivity.class
                         );
                         startActivity(intent);
                     }
