@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:fillViewport="true"
+    android:id="@+id/fragmentLogin"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
     <androidx.core.widget.NestedScrollView

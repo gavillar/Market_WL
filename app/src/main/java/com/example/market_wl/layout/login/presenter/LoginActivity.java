@@ -1,34 +1,35 @@
 package com.example.market_wl.layout.login.presenter;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.market_wl.databinding.ActivityLoginBinding;
-import com.example.market_wl.layout.home.presenter.ui.home.activity.HomeActivity;
 import com.example.market_wl.layout.login.presenter.ui.login.LoginFragment;
 public class LoginActivity extends AppCompatActivity {
 
     private ActivityLoginBinding activityLoginBinding;
 
-    private AppCompatButton loginActivityButton;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getActivityLogin());
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                .replace(
-                    getActivityLoginFrameLayout().getId(),
-                    LoginFragment.newInstance()
-                )
-                .commitNow();
-        }
+        setNavController();
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                .replace(
+//                    getLoginActivityFragmentContainerView().getId(),
+//                    LoginFragment.newInstance()
+//                )
+//                .commitNow();
+//        }
     }
 
     private ActivityLoginBinding getActivityLoginBinding() {
@@ -42,7 +43,24 @@ public class LoginActivity extends AppCompatActivity {
         return getActivityLoginBinding().getRoot();
     }
 
-    private FrameLayout getActivityLoginFrameLayout() {
-        return getActivityLoginBinding().loginActivityFrameLayout;
+    private FrameLayout getLoginActivityFragmentContainerView() {
+        return getActivityLoginBinding().loginActivityFragmentContainerView;
+    }
+
+    public void setNavController() {
+        if(navController == null) {
+            final NavHostFragment navHostFragment = (
+                    (NavHostFragment) getSupportFragmentManager()
+                            .findFragmentById(
+                                    getLoginActivityFragmentContainerView()
+                                            .getId()
+                            )
+            );
+            assert navHostFragment != null;
+            navController = (
+                    navHostFragment
+                            .getNavController()
+            );
+        }
     }
 }
