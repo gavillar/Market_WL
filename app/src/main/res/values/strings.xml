@@ -38,6 +38,7 @@
 
     // Login
     <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="esqueci_minha_senha">Esqueci Minha Senha</string>
     <string name="criar_conta">Criar conta</string>
 
 
