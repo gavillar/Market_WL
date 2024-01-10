@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +16,7 @@ import com.example.market_wl.components.TextViewComponent;
 import com.example.market_wl.extensions.FragmentExtended;
 
 
-public abstract class RegisterFragment extends FragmentExtended {
+ class RegisterFragment extends FragmentExtended {
 
     private RegisterViewModel mViewModel;
 
@@ -24,14 +25,15 @@ public abstract class RegisterFragment extends FragmentExtended {
     private TextViewComponent registerTextView;
 
     private ButtonComponent registerNextButton;
+
+
     private TextViewComponent toolbarTitle;
     private com.example.market_wl.databinding.FragmentRegisterBinding fragmentRegisterBinding;
 
     public RegisterFragment(
-            final TextViewComponent toolbarTitle
-    ) {
+            ) {
         super();
-        this.toolbarTitle = toolbarTitle;
+
     }
 
     @Override
@@ -87,6 +89,8 @@ public abstract class RegisterFragment extends FragmentExtended {
         }
         return registerNextButton;
     }
+
+
 
     protected TextViewComponent getToolbarTitle() {
         return toolbarTitle;

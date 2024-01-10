@@ -7,21 +7,25 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.market_wl.R;
-import com.example.market_wl.components.TextViewComponent;
-import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
+import com.example.market_wl.interfaces.RegisterNavigation;
 
 
 public class RegisterCpfFragment extends RegisterFragment implements RegisterNavigation {
 
-    public RegisterCpfFragment(TextViewComponent toolbarTitle) {
-        super(toolbarTitle);
+    NavController navController;
+
+    public RegisterCpfFragment() {
+        super();
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        navController = NavHostFragment.findNavController(this);
     }
 
     @Nullable
@@ -33,8 +37,7 @@ public class RegisterCpfFragment extends RegisterFragment implements RegisterNav
     ) {
         setRegisterEditText();
         setRegisterTextView();
-        setRegisterNextButton();
-        getToolbarTitle().setText(getResources().getText(R.string.cpf));
+        setNextButton();
         return getFragmentRegisterBinding().getRoot();
     }
     private void setRegisterEditText() {
@@ -47,14 +50,16 @@ public class RegisterCpfFragment extends RegisterFragment implements RegisterNav
 
 
     @Override
-    public void setRegisterNextButton() {
+    public void setNextButton() {
         getRegisterNextButton().setOnClickListener(
                 view -> {
-                    replaceFragment(
-                            R.id.registerActivityFrameLayout,
-                            new RegisterAdressFragment(getToolbarTitle())
-                    );
+                    navController.navigate(R.id.action_registerCpfFragment_to_registerAdressFragment);
                 }
         );
+    }
+
+    @Override
+    public void setBackButton() {
+
     }
 }

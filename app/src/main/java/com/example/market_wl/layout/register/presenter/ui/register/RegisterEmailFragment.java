@@ -7,25 +7,28 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.market_wl.R;
-import com.example.market_wl.components.EditTextComponent;
-import com.example.market_wl.components.TextViewComponent;
-import com.example.market_wl.extensions.FragmentExtended;
-import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
+import com.example.market_wl.interfaces.RegisterNavigation;
 
 
 public class RegisterEmailFragment extends RegisterFragment implements RegisterNavigation {
 
-    public RegisterEmailFragment(TextViewComponent toolbarTitle) {
-        super(toolbarTitle);
+
+    NavController navController;
+
+    public RegisterEmailFragment() {
+        super();
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        navController = NavHostFragment.findNavController(this);
+           }
 
     @Nullable
     @Override
@@ -36,8 +39,7 @@ public class RegisterEmailFragment extends RegisterFragment implements RegisterN
     ) {
         setRegisterEditText();
         setRegisterTextView();
-        setRegisterNextButton();
-        getToolbarTitle().setText(getResources().getText(R.string.email));
+        setNextButton();
         return getFragmentRegisterBinding().getRoot();
     }
 
@@ -51,14 +53,17 @@ public class RegisterEmailFragment extends RegisterFragment implements RegisterN
 
 
     @Override
-    public void setRegisterNextButton() {
+    public void setNextButton() {
         getRegisterNextButton().setOnClickListener(
                 view -> {
-                    replaceFragment(
-                            R.id.registerActivityFrameLayout,
-                            new RegisterCpfFragment(getToolbarTitle())
-                    );
+                navController.navigate(R.id.action_registerEmailFragment_to_registerCpfFragment);
                 }
         );
     }
+
+    @Override
+    public void setBackButton() {
+
+    }
+
 }

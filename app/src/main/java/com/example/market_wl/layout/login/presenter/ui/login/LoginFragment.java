@@ -11,7 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.market_wl.R;
 import com.example.market_wl.databinding.FragmentLoginBinding;
 import com.example.market_wl.extensions.FragmentExtended;
 import com.example.market_wl.layout.forgot_password.presenter.ForgotPasswordActivity;
@@ -32,6 +36,7 @@ public class LoginFragment extends FragmentExtended {
     private AppCompatButton forgotPasswordButton;
 
     private LinearLayout loginScrollArea;
+    NavController navController;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -41,7 +46,8 @@ public class LoginFragment extends FragmentExtended {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setViewModel();
-        // TODO: Use the ViewModel
+
+        navController = NavHostFragment.findNavController(this);
     }
 
     @Nullable
@@ -115,11 +121,7 @@ public class LoginFragment extends FragmentExtended {
             );
             registerButton.setOnClickListener(
                     (view) -> {
-                        Intent intent = new Intent(
-                                getContext(),
-                                RegisterActivity.class
-                        );
-                        startActivity(intent);
+                        navController.navigate(R.id.action_fragmentLogin_to_registerNameFragment);
                     }
             );
         }
@@ -132,11 +134,7 @@ public class LoginFragment extends FragmentExtended {
             );
             forgotPasswordButton.setOnClickListener(
                     (view) -> {
-                        Intent intent = new Intent(
-                                getContext(),
-                                ForgotPasswordActivity.class
-                        );
-                        startActivity(intent);
+                        navController.navigate(R.id.action_fragmentLogin_to_forgotPasswordFragment);
                     }
             );
         }

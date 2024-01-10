@@ -21,7 +21,7 @@
                 style="@style/tool_bar_linear_layout">
                 <ImageView
                     style="@style/tool_bar_icon"
-                    android:id="@+id/registerToolbarBack"
+                    android:id="@+id/register_Toolbar_Back"
                     android:layout_gravity="start"
                     android:src="@drawable/ic_arrow_back"/>
                 <com.example.market_wl.components.TextViewComponent

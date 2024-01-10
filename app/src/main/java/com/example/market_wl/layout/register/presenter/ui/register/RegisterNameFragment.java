@@ -4,24 +4,29 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.market_wl.R;
-import com.example.market_wl.components.TextViewComponent;
-import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
+import com.example.market_wl.interfaces.RegisterNavigation;
 
 
 public class RegisterNameFragment extends RegisterFragment implements RegisterNavigation {
 
-    public RegisterNameFragment(TextViewComponent toolbarTitle) {
-        super(toolbarTitle);
+    NavController navController;
+    public RegisterNameFragment() {
+        super();
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        navController = NavHostFragment.findNavController(this);
     }
 
     @Nullable
@@ -33,8 +38,8 @@ public class RegisterNameFragment extends RegisterFragment implements RegisterNa
     ) {
         setRegisterEditText();
         setRegisterTextView();
-        setRegisterNextButton();
-        getToolbarTitle().setText(getResources().getText(R.string.nome));
+        setNextButton();
+
         return getFragmentRegisterBinding().getRoot();
     }
     private void setRegisterEditText() {
@@ -47,14 +52,16 @@ public class RegisterNameFragment extends RegisterFragment implements RegisterNa
 
 
     @Override
-    public void setRegisterNextButton() {
+    public void setNextButton() {
         getRegisterNextButton().setOnClickListener(
                 view -> {
-                    replaceFragment(
-                            R.id.registerActivityFrameLayout,
-                            new RegisterEmailFragment(getToolbarTitle())
-                    );
+                    navController.navigate(R.id.action_registerNameFragment_to_registerEmailFragment);
                 }
         );
+    }
+
+    @Override
+    public void setBackButton() {
+        navController.popBackStack();
     }
 }

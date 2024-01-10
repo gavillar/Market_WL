@@ -7,16 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.market_wl.R;
-import com.example.market_wl.components.TextViewComponent;
-import com.example.market_wl.layout.register.interfaces.RegisterNavigation;
+import com.example.market_wl.interfaces.RegisterNavigation;
 
 
 public class RegisterAdressFragment extends RegisterFragment implements RegisterNavigation {
 
     private com.example.market_wl.databinding.FragmentRegisterBinding fragmentRegisterBinding;
 
-    public RegisterAdressFragment(TextViewComponent toolbarTitle) {
-        super(toolbarTitle);
+    public RegisterAdressFragment() {
+        super();
     }
 
     @Override
@@ -30,8 +29,7 @@ public class RegisterAdressFragment extends RegisterFragment implements Register
                              Bundle savedInstanceState) {
         setRegisterEditText();
         setRegisterTextView();
-      //  setRegisterNextButton();
-        getToolbarTitle().setText(getResources().getText(R.string.cep));
+        setNextButton();
         return getFragmentRegisterBinding().getRoot();
     }
 
@@ -53,7 +51,12 @@ public class RegisterAdressFragment extends RegisterFragment implements Register
     }
 
     @Override
-    public void setRegisterNextButton() {
+    public void setNextButton() {
+
+    }
+
+    @Override
+    public void setBackButton() {
 
     }
 }

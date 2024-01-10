@@ -24,14 +24,14 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(getActivityRegister());
         setRegisterToolBarBack();
         setRegisterToolBarExit();
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                .replace(
-                    getActivityRegisterFrameLayout().getId(),
-                    new RegisterNameFragment(getRegisterToolbarTitle())
-                )
-                .commitNow();
-        }
+//        if (savedInstanceState == null) {
+//            getSupportFragmentManager().beginTransaction()
+//                .replace(
+//                    getActivityRegisterFrameLayout().getId(),
+//                    new RegisterNameFragment(getRegisterToolbarTitle())
+//                )
+//                .commitNow();
+//        }
     }
 
     private ActivityRegisterBinding getActivityRegisterBinding() {
