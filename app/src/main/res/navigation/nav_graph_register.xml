@@ -18,7 +18,11 @@
         android:id="@+id/registerAdressFragment"
         android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterAdressFragment"
         android:label="RegisterAdressFragment"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerAdressFragment_to_registerPasswordFragment"
+            app:destination="@id/registerPasswordFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerCpfFragment"
         android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterCpfFragment"
@@ -37,4 +41,8 @@
             android:id="@+id/action_registerEmailFragment_to_registerCpfFragment"
             app:destination="@id/registerCpfFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterPasswordFragment"
+        android:label="RegisterPasswordFragment" />
 </navigation>

@@ -6,11 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.market_wl.R;
 import com.example.market_wl.interfaces.RegisterNavigation;
 
 
 public class RegisterAdressFragment extends RegisterFragment implements RegisterNavigation {
+
+    NavController navController;
 
     private com.example.market_wl.databinding.FragmentRegisterBinding fragmentRegisterBinding;
 
@@ -27,9 +32,12 @@ public class RegisterAdressFragment extends RegisterFragment implements Register
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        setNavigation();
+        setNextButton();
+        setBackButton();
         setRegisterEditText();
         setRegisterTextView();
-        setNextButton();
+
         return getFragmentRegisterBinding().getRoot();
     }
 
@@ -51,7 +59,18 @@ public class RegisterAdressFragment extends RegisterFragment implements Register
     }
 
     @Override
+    public void setNavigation() {
+        navController = NavHostFragment.findNavController(this);
+    }
+
+    @Override
     public void setNextButton() {
+            getRegisterNextButton().setOnClickListener(
+                    view -> {
+                        navController.navigate(R.id.action_registerAdressFragment_to_registerPasswordFragment);
+                    }
+            );
+
 
     }
 
