@@ -27,7 +27,7 @@ public class RegisterEmailFragment extends RegisterFragment implements RegisterN
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        navController = NavHostFragment.findNavController(this);
+
            }
 
     @Nullable
@@ -37,9 +37,12 @@ public class RegisterEmailFragment extends RegisterFragment implements RegisterN
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+        setNavigation();
+        setNextButton();
+        setBackButton();
         setRegisterEditText();
         setRegisterTextView();
-        setNextButton();
+
         return getFragmentRegisterBinding().getRoot();
     }
 
@@ -51,6 +54,10 @@ public class RegisterEmailFragment extends RegisterFragment implements RegisterN
         getRegisterTextView().setText(getResources().getText(R.string.qual_o_seu_email));
     }
 
+    @Override
+    public void setNavigation() {
+        navController = NavHostFragment.findNavController(this);
+    }
 
     @Override
     public void setNextButton() {

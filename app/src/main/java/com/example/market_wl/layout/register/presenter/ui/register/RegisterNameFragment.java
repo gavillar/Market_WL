@@ -26,7 +26,7 @@ public class RegisterNameFragment extends RegisterFragment implements RegisterNa
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        navController = NavHostFragment.findNavController(this);
+
     }
 
     @Nullable
@@ -36,11 +36,17 @@ public class RegisterNameFragment extends RegisterFragment implements RegisterNa
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+        setNavigation();
         setRegisterEditText();
         setRegisterTextView();
         setNextButton();
 
         return getFragmentRegisterBinding().getRoot();
+    }
+
+    @Override
+    public void setNavigation() {
+        navController = NavHostFragment.findNavController(this);
     }
     private void setRegisterEditText() {
         getRegisterEditText().setHint(getResources().getText(R.string.nome));

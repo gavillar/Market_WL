@@ -25,7 +25,7 @@ public class RegisterCpfFragment extends RegisterFragment implements RegisterNav
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        navController = NavHostFragment.findNavController(this);
+
     }
 
     @Nullable
@@ -35,9 +35,12 @@ public class RegisterCpfFragment extends RegisterFragment implements RegisterNav
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState
     ) {
+        setNavigation();
+        setNextButton();
+        setBackButton();
         setRegisterEditText();
         setRegisterTextView();
-        setNextButton();
+
         return getFragmentRegisterBinding().getRoot();
     }
     private void setRegisterEditText() {
@@ -48,6 +51,11 @@ public class RegisterCpfFragment extends RegisterFragment implements RegisterNav
         getRegisterTextView().setText(getResources().getText(R.string.qual_o_seu_cpf));
     }
 
+
+    @Override
+    public void setNavigation() {
+        navController = NavHostFragment.findNavController(this);
+    }
 
     @Override
     public void setNextButton() {
