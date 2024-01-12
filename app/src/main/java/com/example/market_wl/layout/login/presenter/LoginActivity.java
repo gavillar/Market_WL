@@ -6,6 +6,8 @@ import android.widget.FrameLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -35,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         return getActivityLoginBinding().getRoot();
     }
 
-    private FrameLayout getLoginActivityFragmentContainerView() {
+    private FragmentContainerView getLoginActivityFragmentContainerView() {
         return getActivityLoginBinding().loginActivityFragmentContainerView;
     }
 

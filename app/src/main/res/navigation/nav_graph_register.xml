@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_register"
+    app:startDestination="@id/registerNameFragment">
+
+    <fragment
+        android:id="@+id/registerNameFragment"
+        android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterNameFragment"
+        android:label="RegisterNameFragment" >
+        <action
+            android:id="@+id/action_registerNameFragment_to_registerEmailFragment"
+            app:destination="@id/registerEmailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerAdressFragment"
+        android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterAdressFragment"
+        android:label="RegisterAdressFragment" />
+    <fragment
+        android:id="@+id/registerCpfFragment"
+        android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterCpfFragment"
+        android:label="RegisterCpfFragment" >
+        <action
+            android:id="@+id/action_registerCpfFragment_to_registerAdressFragment"
+            app:destination="@id/registerAdressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerEmailFragment"
+        android:name="com.example.market_wl.layout.register.presenter.ui.register.RegisterEmailFragment"
+        android:label="RegisterEmailFragment" >
+        <action
+            android:id="@+id/action_registerEmailFragment_to_registerCpfFragment"
+            app:destination="@id/registerCpfFragment" />
+    </fragment>
+</navigation>

@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private FrameLayout getActivityRegisterFrameLayout() {
-        return getActivityRegisterBinding().registerActivityFrameLayout;
+        return getActivityRegisterBinding().registerFragmentFrameLayout;
     }
 
     private void setRegisterToolBarBack() {

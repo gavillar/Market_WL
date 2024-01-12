@@ -121,7 +121,8 @@ public class LoginFragment extends FragmentExtended {
             );
             registerButton.setOnClickListener(
                     (view) -> {
-                        navController.navigate(R.id.action_fragmentLogin_to_registerNameFragment);
+                        NavController navController = Navigation.findNavController(requireView());
+                        navController.navigate(R.id.action_fragmentLogin_to_registerActivity);
                     }
             );
         }
@@ -134,7 +135,8 @@ public class LoginFragment extends FragmentExtended {
             );
             forgotPasswordButton.setOnClickListener(
                     (view) -> {
-                        navController.navigate(R.id.action_fragmentLogin_to_forgotPasswordFragment);
+                        NavController navController = Navigation.findNavController(requireView());
+                        navController.navigate(R.id.action_fragmentLogin_to_forgotPasswordActivity);
                     }
             );
         }
