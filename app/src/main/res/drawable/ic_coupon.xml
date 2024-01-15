@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:viewportWidth="248.774"
+    android:viewportHeight="248.774"
+    android:width="248.774dp"
+    android:height="248.774dp">
+    <path
+        android:pathData="M219.179 51.502H29.6C13.277 51.502 0 63.539 0 78.335v92.104c0 14.796 13.277 26.833 29.6 26.833h189.577c16.318 0 29.597 -12.037 29.597 -26.833V78.335C248.774 63.539 235.495 51.502 219.179 51.502zM233.557 170.439c0 6.404 -6.455 11.616 -14.38 11.616H29.6c-7.931 0 -14.383 -5.212 -14.383 -11.616V78.335c0 -6.404 6.452 -11.616 14.383 -11.616h189.577c7.926 0 14.38 5.212 14.38 11.616V170.439z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M67.622 104.742H82.839V117.839H67.622V104.742Z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M67.622 157.127H82.839V170.224H67.622V157.127Z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M67.622 78.548H82.839V91.645H67.622V78.548Z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M67.622 130.936H82.839V144.03H67.622V130.936Z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M152.026 103.507c0 -11.874 -9.858 -21.611 -21.616 -21.611c-11.874 0 -21.613 9.62 -21.613 21.611c0 12.115 9.741 21.613 21.613 21.613C142.168 125.12 152.026 115.503 152.026 103.507zM121.029 103.507c0 -5.225 4.276 -9.379 9.379 -9.379s9.379 4.157 9.379 9.379c0 5.227 -4.276 9.381 -9.379 9.381C125.305 112.888 121.029 108.731 121.029 103.507z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <path
+        android:pathData="M186.189 124.41c-11.874 -0.043 -21.651 9.544 -21.697 21.537c-0.041 12.11 9.665 21.649 21.542 21.695c11.76 0.043 21.646 -9.546 21.692 -21.537C207.767 134.227 197.947 124.45 186.189 124.41zM186.108 155.407c-5.103 0 -9.376 -4.162 -9.376 -9.384c0 -5.227 4.276 -9.381 9.376 -9.381c5.108 0 9.381 4.157 9.381 9.381C195.492 151.248 191.216 155.407 186.108 155.407z"
+        android:fillColor="@color/purple"
+        tools:ignore="VectorRaster"/>
+    <group
+        android:rotation="-61.99222"
+        android:scaleX="1.000018"
+        android:scaleY="1.000018"
+        android:fillColor="@color/purple"
+        android:translateX="-26.7873"
+        android:translateY="205.8196"
+        tools:ignore="VectorRaster">
+        <path
+            android:pathData="M109.054 117.595H206.754V132.812H109.054V117.595Z"
+            android:fillColor="@color/purple"
+            tools:ignore="VectorRaster"/>
+    </group>
+</vector>
