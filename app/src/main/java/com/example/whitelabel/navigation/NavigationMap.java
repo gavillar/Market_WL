@@ -14,7 +14,7 @@ import com.example.whitelabel.layout.register.phone.RegisterPhoneActivity;
 
 import java.util.HashMap;
 
-class NavigationMap extends HashMap<Class<? extends Activity>, Class<? extends Activity>> {
+class NavigationMap extends HashMap<Class<? extends Navigable>, Class<? extends Navigable>> {
 
     NavigationMap() {
         put(LoginActivity.class, HomeActivity.class);

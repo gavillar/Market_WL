@@ -3,6 +3,7 @@ package com.example.whitelabel.layout.login;
 import android.os.Bundle;
 import android.view.View.OnClickListener;
 
+import com.example.whitelabel.R;
 import com.example.whitelabel.extensions.ActivityExtended;
 import com.example.whitelabel.layout.forgot_password.ForgotPasswordActivity;
 import com.example.whitelabel.layout.register.name.RegisterNameActivity;

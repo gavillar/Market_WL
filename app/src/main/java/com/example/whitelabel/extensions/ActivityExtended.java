@@ -9,9 +9,10 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.whitelabel.navigation.Navigable;
 import com.example.whitelabel.navigation.NavigationController;
 
-public class ActivityExtended extends AppCompatActivity {
+public abstract class ActivityExtended extends AppCompatActivity implements Navigable {
 
     protected void startActivity(
             final Class<? extends AppCompatActivity> targetActivity

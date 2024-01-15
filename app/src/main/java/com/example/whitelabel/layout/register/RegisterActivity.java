@@ -5,9 +5,9 @@ import android.view.View;
 
 import com.example.whitelabel.extensions.ActivityExtended;
 import com.example.whitelabel.layout.login.LoginActivity;
-import com.example.whitelabel.navigation.NavigationNode;
+import com.example.whitelabel.navigation.Navigable;
 
-public abstract class RegisterActivity extends ActivityExtended implements NavigationNode {
+public abstract class RegisterActivity extends ActivityExtended {
 
     private RegisterContentView contentView;
     private final View.OnClickListener back = (

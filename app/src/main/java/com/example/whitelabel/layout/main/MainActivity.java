@@ -4,9 +4,9 @@ import android.os.Bundle;
 
 import com.example.whitelabel.components.BottomBarImageView;
 import com.example.whitelabel.extensions.ActivityExtended;
-import com.example.whitelabel.navigation.NavigationNode;
+import com.example.whitelabel.navigation.Navigable;
 
-public abstract class MainActivity extends ActivityExtended implements NavigationNode {
+public abstract class MainActivity extends ActivityExtended {
 
     private MainContentView contentView;
 
