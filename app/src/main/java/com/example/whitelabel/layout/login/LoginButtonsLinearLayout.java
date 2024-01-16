@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.CleanButton;
+import com.example.whitelabel.components.button.CleanButton;
 
 class LoginButtonsLinearLayout extends LinearLayout {
     

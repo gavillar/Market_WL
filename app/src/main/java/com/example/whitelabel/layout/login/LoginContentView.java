@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatButton;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.BaseButton;
+import com.example.whitelabel.components.button.BaseButton;
 
 class LoginContentView extends LinearLayout {
     private LoginScrollView loginScrollView;

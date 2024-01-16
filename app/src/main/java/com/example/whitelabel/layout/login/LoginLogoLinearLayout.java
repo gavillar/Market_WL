@@ -7,13 +7,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.LinearLayoutComponent;
+import com.example.whitelabel.components.linear_layout.HorizontalLinearLayout;
 import com.example.whitelabel.components.layout_params.LinearLayoutParams;
 import com.example.whitelabel.components.layout_params.RelativeLayoutParams;
-import com.example.whitelabel.components.TextViewComponent;
+import com.example.whitelabel.components.text_view.TextViewComponent;
 import com.example.whitelabel.extensions.ImageViewExtended;
 
-class LoginLogoLinearLayout extends LinearLayoutComponent {
+class LoginLogoLinearLayout extends HorizontalLinearLayout {
 
     private TextView greetTextView;
     private ImageViewExtended greetImageView;
@@ -39,7 +39,7 @@ class LoginLogoLinearLayout extends LinearLayoutComponent {
 
     private ImageView getGreetImageView() {
         if(greetImageView == null) {
-            greetImageView = new ImageViewExtended(getContext());
+            greetImageView = new ImageViewExtended(getContext()) {};
             final RelativeLayoutParams layoutParams = (
                     RelativeLayoutParams.ofSize(115,115)
             );

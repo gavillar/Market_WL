@@ -7,12 +7,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.EditTextComponent;
-import com.example.whitelabel.components.ScrollViewComponent;
-import com.example.whitelabel.components.TextViewComponent;
+import com.example.whitelabel.components.edit_text.EditTextComponent;
+import com.example.whitelabel.components.scroll_view.LinearScrollView;
+import com.example.whitelabel.components.text_view.TextViewComponent;
 import com.example.whitelabel.components.layout_params.LinearLayoutParams;
 
-class LoginScrollView extends ScrollViewComponent {
+class LoginScrollView extends LinearScrollView {
     private EditText userEditText;
     private EditText passwordEditText;
     private LoginLogoLinearLayout logoLinearLayout;

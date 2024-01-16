@@ -3,8 +3,8 @@ package com.example.whitelabel.layout.register.password;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import com.example.whitelabel.components.EditTextComponent;
-import com.example.whitelabel.components.TextViewComponent;
+import com.example.whitelabel.components.edit_text.EditTextComponent;
+import com.example.whitelabel.components.text_view.TextViewComponent;
 import com.example.whitelabel.layout.register.RegisterScrollView;
 
 public class RegisterPasswordScrollView extends RegisterScrollView {

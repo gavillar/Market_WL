@@ -3,7 +3,7 @@ package com.example.whitelabel.layout.register;
 import android.content.Context;
 import android.widget.LinearLayout;
 
-import com.example.whitelabel.components.BaseButton;
+import com.example.whitelabel.components.button.BaseButton;
 import com.example.whitelabel.components.tool_bar.ActionBarComponent;
 
 public class RegisterContentView extends LinearLayout {

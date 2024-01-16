@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 
-public class LinearLayoutExtended extends LinearLayout {
+public abstract class LinearLayoutExtended extends LinearLayout {
 
     public LinearLayoutExtended(Context context) {
         super(context);

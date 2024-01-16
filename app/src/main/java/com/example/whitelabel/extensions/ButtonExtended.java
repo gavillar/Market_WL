@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.whitelabel.R;
 
-public class ButtonExtended extends AppCompatButton {
+public abstract class ButtonExtended extends AppCompatButton {
 
     public ButtonExtended(@NonNull Context context) {
         super(context);

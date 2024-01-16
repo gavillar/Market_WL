@@ -3,10 +3,10 @@ package com.example.whitelabel.layout.register.address;
 import android.content.Context;
 import android.view.ViewGroup;
 
-import com.example.whitelabel.components.EditTextComponent;
+import com.example.whitelabel.components.edit_text.EditTextComponent;
 import com.example.whitelabel.components.layout_params.LinearLayoutParams;
-import com.example.whitelabel.components.PairEditTexts;
-import com.example.whitelabel.components.SpinnerContentComponent;
+import com.example.whitelabel.components.edit_text.PairEditTexts;
+import com.example.whitelabel.components.linear_layout.SpinnerContentComponent;
 import com.example.whitelabel.layout.register.RegisterScrollView;
 
 public class RegisterAddressScrollView extends RegisterScrollView {

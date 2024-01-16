@@ -27,7 +27,7 @@ public abstract class RegisterActivity extends ActivityExtended {
         getContentView().getToolBar().setText(getName());
     }
 
-    public RegisterContentView getContentView() {
+    protected RegisterContentView getContentView() {
         if(contentView == null) {
             contentView = new RegisterContentView(getBaseContext());
             contentView.getToolBar().setLeftButtonOnClickListener(back);

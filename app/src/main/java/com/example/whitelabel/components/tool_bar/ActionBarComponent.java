@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.Gravity;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.IconButton;
-import com.example.whitelabel.components.TextViewComponent;
+import com.example.whitelabel.components.button.IconButton;
+import com.example.whitelabel.components.text_view.TextViewComponent;
 import com.example.whitelabel.components.layout_params.LinearLayoutParams;
 import com.example.whitelabel.utils.LayoutParamsUtils;
 

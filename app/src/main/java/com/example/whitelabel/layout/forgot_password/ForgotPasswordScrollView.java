@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.example.whitelabel.components.EditTextComponent;
-import com.example.whitelabel.components.ScrollViewComponent;
-import com.example.whitelabel.components.TextViewComponent;
+import com.example.whitelabel.components.edit_text.EditTextComponent;
+import com.example.whitelabel.components.scroll_view.LinearScrollView;
+import com.example.whitelabel.components.text_view.TextViewComponent;
 
-public class ForgotPasswordScrollView extends ScrollViewComponent {
+public class ForgotPasswordScrollView extends LinearScrollView {
 
     private TextViewComponent textView;
     private EditTextComponent editText;

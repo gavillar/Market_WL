@@ -4,8 +4,8 @@ import android.content.Context;
 import android.widget.EditText;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.SearchEditText;
-import com.example.whitelabel.components.IconButton;
+import com.example.whitelabel.components.edit_text.SearchEditText;
+import com.example.whitelabel.components.button.IconButton;
 import com.example.whitelabel.utils.LayoutParamsUtils;
 
 public class ToolBarFullComponent extends ToolBarComponent {
