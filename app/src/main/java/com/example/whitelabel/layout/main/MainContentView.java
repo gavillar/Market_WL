@@ -1,26 +1,24 @@
 package com.example.whitelabel.layout.main;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.widget.LinearLayout;
 
 import com.example.whitelabel.R;
-import com.example.whitelabel.components.BottomBar;
-import com.example.whitelabel.components.ScrollViewComponent;
-import com.example.whitelabel.components.layout_params.LinearLayoutParams;
+import com.example.whitelabel.components.linear_layout.VerticalLinearLayout;
+import com.example.whitelabel.components.bottom_bar.BottomBar;
 import com.example.whitelabel.components.tool_bar.ActionBarComponent;
 
-class MainContentView extends LinearLayout {
+public class MainContentView extends LinearLayout {
 
     private ActionBarComponent toolBar;
-    private ScrollViewComponent scrollView;
+    private VerticalLinearLayout linearLayout;
     private BottomBar bottomBar;
 
     public MainContentView(Context context) {
         super(context);
         setOrientation(VERTICAL);
         addView(getToolBar());
-        addView(getScrollView());
+        addView(getLinearLayout());
         addView(getBottomBar());
     }
 
@@ -32,15 +30,11 @@ class MainContentView extends LinearLayout {
         return toolBar;
     }
 
-    public ScrollViewComponent getScrollView() {
-        if(scrollView == null) {
-            scrollView = new ScrollViewComponent(getContext());
-            final LinearLayoutParams layoutParams = LinearLayoutParams.line();
-            layoutParams.weight = 1;
-            scrollView.setLayoutParams(layoutParams);
-            scrollView.setBackgroundColor(Color.BLUE);
+    public VerticalLinearLayout getLinearLayout() {
+        if(linearLayout == null) {
+            linearLayout = new MainLinearLayout(getContext());
         }
-        return scrollView;
+        return linearLayout;
     }
 
     public BottomBar getBottomBar() {

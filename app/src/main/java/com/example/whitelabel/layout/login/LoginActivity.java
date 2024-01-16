@@ -3,7 +3,6 @@ package com.example.whitelabel.layout.login;
 import android.os.Bundle;
 import android.view.View.OnClickListener;
 
-import com.example.whitelabel.R;
 import com.example.whitelabel.extensions.ActivityExtended;
 import com.example.whitelabel.layout.forgot_password.ForgotPasswordActivity;
 import com.example.whitelabel.layout.register.name.RegisterNameActivity;
@@ -11,9 +10,6 @@ import com.example.whitelabel.layout.register.name.RegisterNameActivity;
 public class LoginActivity extends ActivityExtended {
 
     private LoginContentView contentView;
-    private final OnClickListener enter = (
-            view -> startActivity()
-    );
     private final OnClickListener register = (
             view -> startActivity(RegisterNameActivity.class)
     );
@@ -32,7 +28,7 @@ public class LoginActivity extends ActivityExtended {
             contentView = new LoginContentView(getBaseContext());
             contentView
                 .getEnterButton()
-                .setOnClickListener(enter);
+                .setOnClickListener(START_NEXT_ACTIVITY);
             contentView
                 .getForgotPasswordButton()
                 .setOnClickListener(forgotPassword);

@@ -14,6 +14,14 @@ import com.example.whitelabel.navigation.NavigationController;
 
 public abstract class ActivityExtended extends AppCompatActivity implements Navigable {
 
+    protected final View.OnClickListener START_NEXT_ACTIVITY = (
+            view -> startActivity()
+    );
+
+    protected final View.OnClickListener FINISH_ACTIVITY = (
+            view -> finish()
+    );
+
     protected void startActivity(
             final Class<? extends AppCompatActivity> targetActivity
     ) {
