@@ -11,7 +11,7 @@ public class RegisterNameActivity extends RegisterActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getContentView().getScrollView().setLabelNdHint(
-            R.string.qual_o_seu_nome,
+            R.string.what_s_your_name,
             R.string.nome
         );
     }

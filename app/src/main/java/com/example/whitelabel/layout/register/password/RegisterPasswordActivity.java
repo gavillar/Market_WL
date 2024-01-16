@@ -14,16 +14,16 @@ public class RegisterPasswordActivity extends RegisterActivity {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         getContentView().getScrollView().setLabelNdHint(
-                R.string.escolha_uma_senha,
-                R.string.senha,
-                R.string.confirme_a_senha,
-                R.string.senha
+                R.string.choose_password,
+                R.string.password,
+                R.string.confirm_password,
+                R.string.password
         );
     }
 
     @Override
     public CharSequence getName() {
-        return getResources().getText(R.string.senha);
+        return getResources().getText(R.string.password);
     }
 
     @Override

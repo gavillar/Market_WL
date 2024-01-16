@@ -14,17 +14,17 @@ public class RegisterAddressActivity extends RegisterActivity {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         getContentView().getScrollView().setLabelNdHint(
-                R.string.informe_os_dados_do_seu_endereco,
+                R.string.inform_your_address,
                 R.string.cep,
                 R.string.rua,
-                R.string.numero,
-                R.string.cidade
+                R.string.number,
+                R.string.city
         );
     }
 
     @Override
     public CharSequence getName() {
-        return getResources().getText(R.string.endereco);
+        return getResources().getText(R.string.address);
     }
 
     @Override

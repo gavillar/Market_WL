@@ -24,7 +24,7 @@ public class BaseButton extends ButtonExtended {
         setTypeface(TextViewUtils.getDefaultBoldTypeface(getContext()));
         setBackground(R.drawable.base_button);
         setTextColor(getResources().getColor(R.color.white));
-        setText(R.string.continuar);
+        setText(R.string.next);
         setGravity(CENTER);
         setTextSize(TextViewUtils.getDefaultBigTextSize());
     }

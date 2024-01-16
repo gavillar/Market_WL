@@ -62,7 +62,7 @@ class LoginScrollView extends LinearScrollView {
             );
             layoutParams.topMargin = 100;
             userEditText.setLayoutParams(layoutParams);
-            userEditText.setHint(R.string.telefone_email_ou_usuario);
+            userEditText.setHint(R.string.phone_email_or_user);
         }
         return userEditText;
     }
@@ -75,7 +75,7 @@ class LoginScrollView extends LinearScrollView {
             );
             layoutParams.topMargin = 50;
             passwordEditText.setLayoutParams(layoutParams);
-            passwordEditText.setHint(R.string.senha);
+            passwordEditText.setHint(R.string.password);
         }
         return passwordEditText;
     }

@@ -23,7 +23,7 @@ class LoginButtonsLinearLayout extends LinearLayout {
     public CleanButton getRegisterButton() {
         if(registerButton == null) {
             registerButton = new CleanButton(getContext());
-            registerButton.setText(R.string.criar_conta);
+            registerButton.setText(R.string.create_account);
         }
         return registerButton;
     }
@@ -31,7 +31,7 @@ class LoginButtonsLinearLayout extends LinearLayout {
     public CleanButton getForgotPasswordButton() {
         if(forgotPasswordButton == null) {
             forgotPasswordButton = new CleanButton(getContext());
-            forgotPasswordButton.setText(R.string.esqueceu_a_senha);
+            forgotPasswordButton.setText(R.string.forgot_password);
         }
         return forgotPasswordButton;
     }

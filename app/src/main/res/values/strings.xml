@@ -3,42 +3,43 @@
     <string name="greet">
         Bem Vindo!
     </string>
-    <string name="telefone_email_ou_usuario">
+    <string name="phone_email_or_user">
         Telefone, E-mail ou Usuário
     </string>
-    <string name="continuar">Continuar</string>
-    <string name="criar_conta">Criar Conta</string>
-    <string name="senha">Senha</string>
+    <string name="next">Continuar</string>
+    <string name="create_account">Criar Conta</string>
+    <string name="password">Senha</string>
+    <string name="your_basket">Sua cesta</string>
     <string name="nome">Nome</string>
     <string name="home">Home</string>
     <string name="cart">Carrinho</string>
     <string name="discount">Desconto</string>
     <string name="profile">Perfil</string>
     <string name="coupon">Cupon</string>
-    <string name="entrar">Entrar</string>
-    <string name="qual_o_seu_nome">Qual o seu nome?</string>
+    <string name="sign_in">Entrar</string>
+    <string name="what_s_your_name">Qual o seu nome?</string>
     <string name="email">Email</string>
-    <string name="qual_o_seu_email">Qual o seu email?</string>
-    <string name="informe_os_dados_do_seu_endereco">
+    <string name="what_s_your_email">Qual o seu email?</string>
+    <string name="inform_your_address">
         Informe os dados do seu endereço
     </string>
     <string name="cpf">CPF</string>
     <string name="rua">Rua</string>
-    <string name="numero">Número</string>
-    <string name="estado">Estado</string>
-    <string name="cidade">Cidade</string>
-    <string name="complemento">Complemento</string>
-    <string name="qual_o_seu_cpf">Qual o seu CPF?</string>
-    <string name="celular">Celular</string>
-    <string name="qual_o_numero_do_seu_celular">
+    <string name="number">Número</string>
+    <string name="state">Estado</string>
+    <string name="city">Cidade</string>
+    <string name="complement">Complemento</string>
+    <string name="what_s_your_cpf">Qual o seu CPF?</string>
+    <string name="phone">Celular</string>
+    <string name="what_s_your_phone_number">
         Qual o número do seu celular?
     </string>
-    <string name="escolha_uma_senha">Escolha uma senha</string>
-    <string name="confirme_a_senha">Confirme a senha</string>
-    <string name="esqueceu_a_senha">Esqueceu a senha?</string>
+    <string name="choose_password">Escolha uma senha</string>
+    <string name="confirm_password">Confirme a senha</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
     <string name="cep">Cep</string>
-    <string name="endereco">Endereço</string>
-    <string name="inicio">Inicio</string>
-    <string name="cupons">Cupons</string>
+    <string name="address">Endereço</string>
+    <string name="beginning">Inicio</string>
+    <string name="coupons">Cupons</string>
     <string name="perfil">Perfil</string>
 </resources>

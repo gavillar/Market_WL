@@ -21,7 +21,7 @@ public class EditTextComponent extends EditTextExtended {
         setLayoutParams(
             new ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                LayoutParamsUtils.getDefaultEditTextHeight(getContext())
+                LayoutParamsUtils.getDefaultEditTextHeight()
             )
         );
         setFocusable(true);

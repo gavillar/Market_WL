@@ -24,7 +24,7 @@ public class SpinnerContentComponent extends LinearLayoutExtended {
         setBackground(R.drawable.spinner_content);
         setLayoutParams(
             LinearLayoutParams.line(
-                LayoutParamsUtils.getDefaultEditTextHeight(getContext())
+                LayoutParamsUtils.getDefaultEditTextHeight()
             )
         );
         setGravity(Gravity.CENTER_VERTICAL);

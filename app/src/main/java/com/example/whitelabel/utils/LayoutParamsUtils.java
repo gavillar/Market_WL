@@ -5,16 +5,16 @@ import android.util.TypedValue;
 
 public abstract class LayoutParamsUtils {
 
-    public static int getDefaultEditTextHeight(Context context) {
-        return context.getResources().getDisplayMetrics().heightPixels/8;
+    public static int getDefaultEditTextHeight() {
+        return 200;
     };
 
     public static int getDefaultBaseButtonHeight(Context context) {
-        return context.getResources().getDisplayMetrics().heightPixels/8;
+        return context.getResources().getDisplayMetrics().heightPixels/10;
     };
 
     public static int getDefaultCleanButtonHeight(Context context) {
-        return context.getResources().getDisplayMetrics().heightPixels/15;
+        return context.getResources().getDisplayMetrics().heightPixels/20;
     };
 
     public static int getActionBarHeight(Context context) {

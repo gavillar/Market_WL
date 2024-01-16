@@ -29,7 +29,7 @@ class LoginContentView extends LinearLayout {
     public AppCompatButton getEnterButton() {
         if(enterButton == null) {
             enterButton = new BaseButton(getContext());
-            enterButton.setText(R.string.entrar);
+            enterButton.setText(R.string.sign_in);
         }
         return enterButton;
     }

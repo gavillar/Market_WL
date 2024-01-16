@@ -11,7 +11,7 @@ public class RegisterEmailActivity extends RegisterActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getContentView().getScrollView().setLabelNdHint(
-            R.string.qual_o_seu_email,
+            R.string.what_s_your_email,
             R.string.email
         );
     }

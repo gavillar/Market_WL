@@ -46,7 +46,7 @@ public class PairEditTexts extends LinearLayout {
         final LinearLayout.LayoutParams leftLayoutParams = (
                 new LinearLayout.LayoutParams(
                         0,
-                        LayoutParamsUtils.getDefaultEditTextHeight(getContext())
+                        LayoutParamsUtils.getDefaultEditTextHeight()
                 )
         );
         leftLayoutParams.weight = left;
@@ -54,7 +54,7 @@ public class PairEditTexts extends LinearLayout {
         final LinearLayout.LayoutParams rightLayoutParams = (
                 new LinearLayout.LayoutParams(
                         0,
-                        LayoutParamsUtils.getDefaultEditTextHeight(getContext())
+                        LayoutParamsUtils.getDefaultEditTextHeight()
                 )
         );
         rightLayoutParams.weight = right;

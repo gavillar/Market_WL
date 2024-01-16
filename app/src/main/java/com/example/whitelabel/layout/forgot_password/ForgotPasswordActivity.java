@@ -14,7 +14,7 @@ public class ForgotPasswordActivity extends ActivityExtended {
         super.onCreate(savedInstanceState);
         setContentView(getContentView());
         getContentView().getScrollView().setLabelNdHint(
-                R.string.qual_o_seu_email,
+                R.string.what_s_your_email,
                 R.string.email
         );
     }
